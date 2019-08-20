@@ -1,0 +1,17 @@
+--- 
+title: "Premiers pas en statistique avec R"
+author: "Claude Grasland"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+github-repo: ClaudeGrasland/StatR
+description: "Exercices commentés pour bien débuter en R."
+---
+
+# Prérequis
+
+Aucun ! Cette initiation est destinée à des étudiants n'ayant jamais utilisé R mais connaissant à peu près la statistique univariée et bivariée...

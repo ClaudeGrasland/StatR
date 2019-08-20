@@ -1,0 +1,188 @@
+# UN TABLEAU DE DONNES D'ENQUETE (Les ménages de Yemessoa en 2005)
+
+On suppose que vous avez acquis les premiers réflexes de programmation en R avec les variables quantitatives contenues dans le fichier Europe 1988. VOus y avez appris à expliquer une variable Y  quantitative par une variable X pouvant être soit qualitative (analyse de variance, test d'égalité des moyennes), soit quantitative (corrélation, régression)
+
+Dans ce deuxième module, on va essayer d'expliquer une variable qualitative Y par une autre variable qualitative X. On ne traitera pas directement le cas de l'explication d'une variable qualitative Y par une variable quantitative X, car il peut soit se ramener au cas déjà vu dans le cours précédent, soit se résoudre par une transformation de X en une variable X' qualitative.
+
+L'exemple utilisé ici est fondé sur une véritable enquête de terrain réalisée en 2003 par une étudiante de maitrise de Paris 7, anne-Gaëlle Monnier,à propos de l'électrification d'un village camerounais nommé Yemessoa. 
+
+
+## Définition de l'environnement de travail
+
+### charger ou installer les packages utiles.
+
+Comme on l'a déjà vu, il faut charger ici les packages utiles. On installera juste un joli package spécialisé dans l'analyse des tableaux de contingence et leur visualisation.
+
+```{r}
+library(vcd)
+```
+
+Si un message d'erreur apparaît, c'est qu'il faut installer le package à partir d'internet. On le fait avec le menu **Tools/install Package** 
+
+### Définir un espace de travail
+
+
+On vérifie l'emplacement où l'on va trouver les données
+
+
+```{r}
+# (1.2) Choix du rÈpertoire contenant les donnÈes
+monchemin<-"data/yemessoa"
+list.files(monchemin)
+
+```
+
+
+Nous allons maintenant essayer de charger le fichier de données 
+
+
+## Charger un tableau de données
+
+On utilise ici une procédure adaptée à la lecture de fichiers texte :  *read.table()*
+L'instruction *header=TRUE* signale que la première ligne donne le nom des variables
+L'instruction *dec=","* signale que les décimales sont représentées par des virgules et non pas des points comme dans le premier module. Les séparateurs sont cette fois-ci des tabulations décrites par antislash-t.
+
+### Importation d'un tableau
+```{r}
+# --------------------------------------------------------
+# (2) IMPORTATION ET MISE EN FORME D'UN TABLEAU DE DONNEES
+# --------------------------------------------------------
+# (2.1) Importation d'un fichier .txt
+yem<-read.csv("data/yemessoa/yemessoa2005.txt", header=TRUE, sep="\t",dec=",")
+```
+
+
+On affiche les premières lignes (*head*) ou les dernières lignes (*tail*) du tableau pour voir si le chargement s'est bien effectué : 
+```{r}
+head(yem)
+tail(yem)
+```
+
+
+### Vérification du type des variables
+
+On a vu qu'on peut s'éviter beaucoup d'ennuis en contrôlant le type des variables qui a été attribué aux différentes colonnes par R lors de la lecture d'un fichier. Pour cela on commence par regarder quels sont les types de variables du tableau à l'aide de l'instruction *str()* :
+
+```{r}
+str(yem)
+```
+
+Il y a visiblement des erreurs de codage que l'on va corriger. Ainsi, CODE est de type caractère. Mais le type "FACTOR" doit par contreêtre conservé pour toutes les variables qualitatives ayant au moins deux modalités. On peut renommer les modalités d'un facteur
+
+
+
+```{r}
+yem$CODE<-as.character(yem$CODE)
+yem$CON3<-as.factor(yem$CON3)
+levels (yem$CON3)
+levels(yem$CON3)<-c("(0) : non connecté","(1) informel","(2) officiel")
+yem$DIST<-as.numeric(yem$DIST)
+str(yem)
+```
+
+Et voilà : désormais notre tableau est désormais cohérent. On pourra encore l'améliorer par la suite en transformant des variables quantitatives en variables qualitatives
+
+
+
+### Un petit résumé statistique 
+
+La récompense d'une bonne définition du tableau est  d'obtenir pour chaque variable un résumé adapté à son type
+
+```{r}
+summary(yem)
+```
+
+
+
+Avant d'aller plus loin, commentez rapidement ce tableau pour bien prendre connaissance de chacune des variables.
+
+
+
+## ANALYSE 3 (Y Quali/ X Quali) 
+
+Le niveau d'électrification des ménages (Y) est-il lié au genre du chef de ménage (X) ?
+
+Notre objectif est le même que dans le module précédent : chercher s'il existe une relation significative entre X et Y puis en décrire la forme.  
+
+### Analyse de la variable dépendante (Y)
+
+Deux petites commandes pour dénombrer l'effectif des classes et les représenter
+
+```{r}
+# Analyse de la  variable dépendante
+Y<-yem$CON2
+#calcul des fréquences
+summary(Y)
+#diagramme en bâtons
+plot(Y)
+```
+Commentaire : ...
+
+
+### Analyse de la variable indépendante (X)
+Même programme ...
+
+```{r}
+# Analyse de la  variable dépendante
+X<-yem$SEXE
+#calcul des fréquences
+summary(X)
+#diagramme en bâtons
+plot(X)
+```
+
+Commentaire : ...
+
+### Visualisation de la distribution croisée de Y et X
+
+```{r}
+plot(Y~X)
+```
+
+Commentaire : ...
+
+
+### Calcul du tableau de contingence et des trois tableaux de pourcentage associés
+
+```{r}
+tabcont<-table(Y,X)
+tabcont
+prop.table(tabcont,margin=)
+prop.table(tabcont,margin=1)
+prop.table(tabcont,margin=2)
+```
+
+Commentaire : ...
+
+
+### Calcul du tableau théorique et test du chi-2
+
+```{r}
+test<-chisq.test(tabcont)
+test$observed
+test$expected
+test$residuals
+test
+```
+
+Commentaire : ***
+
+
+### Une jolie figure pour interpréter la relation (si elle est significative)
+
+
+```{r}
+mosaic(~Y+X,
+  main = "Relation entre X et Y", shade = TRUE, legend = TRUE)
+```
+
+
+
+## A VOUS DE JOUER !
+
+Essayez de reproduire la même analyse sur deux autres variables qualitatives 
+
+
+
+
+

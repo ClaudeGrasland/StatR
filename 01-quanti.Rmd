@@ -1,0 +1,554 @@
+# UN TABLEAU DE DONNEES AGREGEES (Pays d'Europe en 1988)
+
+Accrochez vos ceintures … on plonge directement dans un programme R qu’il s’agit juste d’exécuter sans comprendre ce qui se passe pour avoir une idée des possibilités du logiciel mais aussi des difficultés. Vous êtes un peu comme un étranger qui entend parler une langue nouvelle et découvre de nouveaux mots et essaye de les reproduire comme dans la méthode Assimil … Evidemment ça ne marche pas à tous les coups. 
+
+On commence ici par un exemple où tout se passe bien et on utilise pour cela un exemple fétiche de l'enseignant, celui des pays d'Europe en 1988 à la veille de la chute du mur de Berlin. Exemple qui a été testé depuis 30 ans sur tous les logiciels de statistique possible (Lotus, Calc, SAS, XLSTAT, SPAD, ....). Il vous est recommandé d'avoir également un exemple fétiche sur lequel vous pourrez tester à votre tour le programme ci-dessous en l'adaptant.
+
+Les 24 pays d'Europe sont identifiés par leur code iso (PAYS), leur appartenance aux pays socialistes ou capitalistes (BLOC), leur position spatiale (X,Y) et tout un ensemble de variables économpiques et sociale telles que le PNB par habitant (PNB), le taux de mortlaité infantile (TMI), l'espérance de vie à la naissance (ESP), le taux d'urbanisation (URB), le taux de natalité (NAT), le taux de mortalité (MOR), l'indice conjoncturel de fécondité (FEC), le % de jeunes de 0-14 ans (JEU), le * de vieux de 65 ans et plus (VIE), la superficie totale en milliers de kM2  (SUP) et la population totale en millions (POP).
+
+## Définition de l'environnement de travail
+
+### charger ou installer les packages utiles.
+
+Au début de chaque programme R, on commence par indiquer la liste de tous les packages dont on aura besoin pour executer les traitements. On les charge par la commande *library(nom_du_package)*. ici, on va juste installe le package *Hmisc* qui regroupe un grand nombre d'outils statistiques courants.  
+
+```{r}
+library(Hmisc)
+```
+
+Si un message d'erreur apparaît, c'est qu'il faut installer le package à partir d'internet. On le fait avec le menu **Tools/install Package** 
+
+### Définir un espace de travail
+
+le répertoire de travail dans lequel seront lus ou écrit les fichiers. 
+
+Dans le programme ci-dessous, les lignes commençant par "#" sont des commentaires. La seule ligne active est getwd() qui indique la position du répertoire courant. Il est recommandé aux débutants, mais aussi aux programmeurs plus expérimentés de napas hésiter à ajouter beaucoup de lignes de commentaires. Cela facilité l'apprentissage et permet de transmettre ses programmes à d'autres.  
+
+
+```{r}
+# ---------------------------
+# (1) ESPACE DE TRAVAIL
+# ---------------------------
+# (1.1) Quel est le répertoire actuel ?
+getwd()
+```
+
+On repère ensuite le chemin de l'emplacement du dossier où se trouvent les données et on examine son contenu. Attention, contrairement à windows il faut toujours utiliser des slash (/) et non pas des antislash pour décrire les chemins d'accès des fichiers
+
+
+```{r}
+# (1.2) Choix du rÈpertoire contenant les donnÈes
+monchemin<-"data/euro1988"
+list.files(monchemin)
+
+```
+
+
+
+
+Nous allons maintenant essayer de charger le fichier de données 
+
+
+## Charger un tableau de données
+
+On utilise ici une procédure adaptée à la lecture de fichiers texte :  *read.table()*
+L'instruction *header=TRUE* signale que la première ligne donne le nom des variables
+L'instruction *dec="."* signale que les décimales sont représentées par des points et non pas des virgules.
+
+### Importation d'un tableau
+```{r}
+# --------------------------------------------------------
+# (2) IMPORTATION ET MISE EN FORME D'UN TABLEAU DE DONNEES
+# --------------------------------------------------------
+# (2.1) Importation d'un fichier .txt
+euro <- read.table("data/euro1988/euro1988.txt", 
+                   dec=".",
+                   header=TRUE)
+```
+
+
+Pour savoir si le chargement s'est bien pssé on peut afficher le tableau en tapant son nom
+```{r}
+euro 
+```
+
+Mais on peut aussi se contenter d'afficher les premières lignes (*head*) ou les dernières lignes (*tail*) du tableau. Par exemple, pour voir les trois premières et les 5 dernières lignes : 
+```{r}
+head(euro,3)
+tail(euro,5)
+```
+
+Naturellement ... les instructions présentées ci-dessus ne marcheront pas pour tous les tableaux et vous devez vous attendre à pas mal de difficultés à ce stade. Il existe en effet beaucoup d'options à connaître pour charger les fichiers. Vous pouvez ainsi examiner toutes les options de la procédure *read.table* en tapant un ? suivi du nom de la procédure. Et vous pouvez faire de même pour les autres procédures d'importation comme *read.csv*, *read.delim*, etc...
+
+### Choix du nom des lignes
+
+Par défaut, le nom des lignes correspond à l'ordre de lecture du fichier (*1..24*). Mais il peut être intéressant de le préciser en lui attribuant par exemple la valeur d'une variable servant d'identifiant. 
+
+```{r}
+rownames(euro)<-euro$PAYS
+head(euro)
+```
+
+### Vérification du type des variables
+
+On peut s'éviter beaucoup d'ennuis en contrôlant le type des variables qui a été attribué aux différentes colonnes par R lors de la lecture d'un fichier. Pour cela on commence par regarder quels sont les types de variables du tableau à l'aide de l'instruction *str()* :
+
+```{r}
+str(euro)
+```
+
+L'instruction *str()* est très importante dans R. Elle permet en effet d'examiner le type d'un objet et des éléments qui le composent. Ici on note que l'objet euro est un *data.frame* c'est-à-dire un tableau de données croisant des indivdus (lignes) et des variables de types différents (colonnes). Par défaut, R a attribué le type "Factor" à toutes les variables composées de texte, le type "int" ou integer à toutes les variables comportant uniquement des nombres entiers et enfin le type "num" ou numérique à toutes les variables comportant des chiffres avec des décimales.  Il peut arriver que ce choix par défaut ne correspondent pas aux traitements que l'on veut effectuer et, dans ce cas, on procèdera à des conversions de variables d'un type à un autre. 
+
+Ainsi le type "Factor" est difficile à utiliser pour les débutants et il est souvent confondu avec le type "Character". Pour fixer les idées, on peut dire qu'un "Factor" correspond à ces classes portant à la fois un numéro et une étiquette. Ainsi la variable "BLOC" est bien un facteur correspondant à deux classes : celle des pays capitalistes (numéro = 1, étiquette ="cap") et celle des pays socialistes (numero = 2, étiquette = "soc"). Par contre la variable PAYS ne définit pas des classes puisqu'elle est différente pour chaque pays et est donc du type "character".
+
+De la même manière, un nombre entier peut conduire à des comportements bizarre pour les valeurs élevées et il vaut mieux utiliser le tupe numérique lorsqu'on est en présence de nombre réels qui ont juste été arrondis à zéro chiffres après la virgule. Dans notre exemple, il n'existe pas de variables entières mais uniquement des nombres réels arrondis. 
+
+
+
+```{r}
+euro$PAYS<-as.character(euro$PAYS)
+euro$BLOC<-as.factor(euro$BLOC)
+euro$PNB<-as.numeric(euro$PNB)
+euro$ESP<-as.numeric(euro$ESP)
+euro$URB<-as.numeric(euro$URB)
+euro$NAT<-as.numeric(euro$NAT)
+euro$MOR<-as.numeric(euro$MOR)
+euro$JEU<-as.numeric(euro$JEU)
+euro$VIE<-as.numeric(euro$VIE)
+euro$SUP<-as.numeric(euro$SUP)
+euro$POP<-as.numeric(euro$POP)
+euro$X<-as.numeric(euro$X)
+euro$Y<-as.numeric(euro$Y)
+str(euro)
+```
+
+Et voilà : désormais notre tableau ne comporte plus que des variables de type caractère ou de type numérique. Cela nous a demandé un peu de temps mais nous évitera par la suite beaucoup d'ennuis. En effet,  **au moins 50 % des erreurs dans R viennent d'un problème de mauvaise définiton du type d''un objet ou du type d'une variable  !!!**
+
+### Enregistrement du tableau au format propre à R
+
+Il n'est pas forcément necessaire d'enregistrer ses données au format propre à R (*.rda*)s'il s'agit d'un petit tableau. Il suffit en effet de sauvegarder le programme que nous venons d'écrire et de l'executer chaque fois que nécessaire. Toutefois, il peut arriver que cette étape soit longue et dans ce cas la sauvegarde est utile.
+
+```{r}
+save(euro, file="data/euro1988/euro1988.rda")
+```
+
+on pourra ensuite facilement récupérer les données par la commande suivante
+
+
+```{r}
+load("data/euro1988/euro1988.rda")
+```
+
+
+### Un petit résumé statistique 
+
+N'oublions pas que R est avant tout un logiciel de statistiques... La récompense d'une bonne définition du tableau sera d'obtenir pour chaque variable un résumé adapté à son type :
+
+```{r}
+summary(euro)
+```
+
+
+
+
+On va tenter de répondre à des questions simples sans détailler dans l'immédiat les outils statistiques qui permettent de valider scientifiquement les réponses. On insistera plus ici sur les capacités de visualisation de résultats sous R.
+
+## ANALYSE 1 (Y Quanti / X Quali) 
+
+La mortalité infantile (Y) est-elle significativement plus forte dans les pays socialistes (X)?
+
+Notre objectif est plus généralement de mettre en relation une variable numérique (TMI) avec une variable de type facteur (BLOC). On va procéder par étape en étudiant d'abord chque variable séparément puis en les croisant et finalement en testant notre hypothèse d'une surmortalité infantile des pays socialistes.  
+
+### Analyse de la répartition des pays par bloc politique (BLOC)
+
+Deux petites commandes pour dénombrer l'effectif des classes et les représenter
+```{r}
+# Analyse de la  variable qualitative (BLOC)
+#calcul des fréquences
+summary(euro$BLOC)
+#diagramme en bâtons
+plot(euro$BLOC)
+```
+
+### Analyse de la distribution des taux de mortalité infantile (TMI)
+
+Quelques petites commandes pour camlculer les paramètres principaux de la mortalité infantile et la représenter.
+
+```{r}
+# Analyse de la variable quantitative (TMI)
+
+# calcul et visualisation des quantiles
+summary(euro$TMI)
+boxplot(euro$TMI)
+
+#calcul de la moyenne et de l'écart type
+mean(euro$TMI)
+sd(euro$TMI)
+
+# visualisation de l'histogramme
+hist(euro$TMI)
+```
+
+### Comaparaison de la mortalité infantile par bloc (BLOC*TMI)
+
+Quelques outils pour analyser conjointement les deux distributions.
+
+```{r}
+# calcul et visualisation des quantiles
+tapply(euro$TMI, euro$BLOC, summary)
+boxplot(euro$TMI~euro$BLOC)
+
+#calcul de la moyenne et de l'écart type
+tapply(euro$TMI, euro$BLOC, mean)
+tapply(euro$TMI, euro$BLOC, sd)
+
+# visualisation des deux histogrammes
+par(mfrow= c(2,1)) 
+hist(euro$TMI[euro$BLOC =="Soc"],
+#     xlim = c(0,50),
+     main="Pays Socialistes", 
+     col="red") 
+hist(euro$TMI[euro$BLOC =="Cap"],
+#     xlim = c(0,50),
+     main="Pays Capitalistes",
+     col="blue") 
+
+```
+
+
+### Test d'égalité des moyennes (BLOC*TMI)
+
+Maintenant que nous avons pris connaissance de la forme de nos deux variables BLOC et TMI, essayons de réaliser une opération statistique de plus haut niveau : le test d'une hypothèse. Nous savons grâce aux analyses précédentes que la mortalité infantile *semble* plus élévée en général dans les pays socialistes que dans les pays capitalistes. Mais pouvons nous le *prouver" de façon rigoureuse en utilisant les règles de l'art ?
+
+Bien évidemment, ce n'est pas l'apprentissage de R qui va vous apprendre la théorie des tests statistiques. Mais R va vous permettre très rapidement de mettre en oeuvre les tests que vous aurez appris en cours ou dans les manuels. Et surtout, il va vous offrir une gamme de possibilités de tests et de variantes qui devrait vous pousser à renforcer simultanément vos connaissances en R et en statitiques. 
+
+Dans l'exemple qui nous intéresse, les étudiants ayant une formation de base en statistique savent qu'il existe un test d'égalité des moyennes de deux échantillons appelé test t de student qui semble approprié au problème de comapraison de la mortalité infantile des pays socialistes et capitalistes. Il tient compte de l'effectif de ces échantillons (combiens de pays de chaque type ?) et de leur hétérogénéité interne (appelée variance). On devine intuitivement que la différence des moyennes de deux échantillons sera d'autant plus significative qu'elle oppose deux groupes homogènes comportant chacun de nombreux pays. 
+
+Si cela ne vous parait pas intuitif, imaginez un premier groupe de trois pays ayant pour mortalité (10, 20, 30) et un second groupe de trois pays également ayant pour mortalité (5,15,25). Leurs moyennes respectives sont 20 et 15, soit un écart de 5. Mais il semblerait hasardeux de conclure à de réelles différences compte tenu de l'étalement de chaque distribution. 
+```{r}
+# Comparaison de la distribution de deux échantillons
+VARQUANT<-c(10,20,30,5,15,25)
+VARQUALI<-c("A","A","A","B","B","B")
+par(mfrow=c(1,1))
+boxplot(VARQUANT~ VARQUALI)
+```
+
+
+Imaginez maintenant un premier groupe de 6 pays ayant pour mortalité (18,19,20,20,21,22) et un second groupe de 10 pays ayant pour mortalité (13,14,15,15,16,17). Les moyennes des deux groupes sont toujours respectivement de 20 et de 15, mais on "sent" que les écarts sont plus pertinents car ils portent sur deux groupes plus larges et surtout plus homogènes. Dit autrement, il est peu probable que les différences observées dans la seconde expérience soient le fruit du hasard alors que, dans le premier cas, on pouvait imaginer que les pays des deux groupes n'étaient pas fondamentalement différents.
+
+
+```{r}
+# Comparaison de la distribution de deux échantillons
+VARQUANT<-c(18,19,20,20,21,22,13,14,15,15,16,17)
+VARQUALI<-c("A","A","A","A","A","A","B","B","B","B","B","B")
+par(mfrow=c(1,1))
+boxplot(VARQUANT~ VARQUALI)
+
+```
+
+
+Le test T de student dont vous trouverez la formule dans tous les bons manuels va permettre de transformer l'intuition précédente en mesure objective et en donner une mesure fondamentale appelée **p-value** ou *seuil de rejet de l'hypothèse d'indépendance entre deux caractères*. Là encore, on peut donner une idée intuitive de ce qu'est la p-value en la présentant comme une mesure de la significativité de la relation entre deux caractères. De façon plus rigoureuse, la p-value mesure la probabilité que la relation observée entre deux variables (ici, la différence de moyenne) soit l'effet du hasard. La p-value varie entre 0 et 1, 0 signifiant que la significativité de la relation est certaine (la différence de moyenne ne peut pas être l'effet du hasard) et 1 signifiant qu'il n'existe aucune relation entre les deux variobles (les deux moyennes sont égales).
+
+Examinons brièvement les valeurs de p-value sur nos deux exemples :
+
+```{r}
+# Test paramétrique d'égalité des moyennes de Student
+VARQUANT<-c(10,20,30,5,15,25)
+VARQUALI<-c("A","A","A","B","B","B")
+ t.test(VARQUANT ~ VARQUALI) 
+```
+
+Vous pouvez lire dans le résultat que la p-value est de 0.5734 ce qui signifie que l'on aurait 57% de chances de se tromper si l'on affirmait que la différence de moyenne entre les deux échantillons A et B est l'effet du hasard. Voyons ce qu'il en est pour notre second exemple
+
+```{r}
+# Test paramétrique d'égalité des moyennes de Student
+VARQUANT<-c(18,19,20,20,21,22,13,14,15,15,16,17)
+VARQUALI<-c("A","A","A","A","A","A","B","B","B","B","B","B")
+t.test(VARQUANT ~ VARQUALI) 
+
+```
+
+Cette fois-ci, vous pouvez voir que la valuer du t de student est beaucoup plus forte (6.13) ce qui se traduit par une p-value très proche de zéro (0.00011). La probabilité que les différences entre les deux échantillons soit l'effet du hasard est donc minime et on peut conclure avec une quasi-certiude que A et B correpondent à des groupes de pays ayant des mortalité significativement différentes. 
+
+Essayons maintenant d'appliquer ce même test de Student à notre exemple empirique de la mortalité infantile des pays socialistes et capitalistes.
+
+
+```{r}
+# Test paramétrique d'égalité des moyennes de Student (inadapté)
+ t.test(euro$TMI ~ euro$BLOC) 
+
+```
+
+Cette fois-ci le t de Student est égal à -3.19 et la p-value est égale à 0.0147, ce qui signifie que nous avons environ 1.5% de chances que les différences observées entre pays socialistes et capitalistes soient le simple effet du hasard et ne reflètent pas une véritable opposition. Du coup, que faut-il conclure ? 
+
+En sciences sociales, il est de tradition de considérer comme significatives les relations comportant un risque d'erreur inférieur à 5% soit 0.05. Puisque notre p-value est inférieure à 0.05, nous pouvons donc nous appuyer sur cette tradition et écrire que *"l'on peut affirmer avec un risque d'erreur inférieur à 5% que les pays socialistes et capitalistes présentaient des différences significatives de mortalité infantile en 1988"*. 
+
+Ou bien écrire plus simplement *"En 1988 en Europe, la mortalité infantile moyenne des pays socialistes (21.2 P.1000) était significativement plus forte que celles des pays capitalistes (9.1 p.1000)"* et ajouter dans une note en bas de page la remarque qui fait chic *p-value=0.0147*. 
+
+
+Ne concluez cependant pas trop vite que vous maitrisez désormais toutes les subtilités du test statistique d'égalité des moyennes. Si notre raisonnement précédent est *approximativement* juste, il serait sans doute critiqué par un vrai statisticien qui noterait immédiatement que le test t de student n'est pas le plus adapté à notre problème car (1) les distributions de mortalité ne sont pas gaussiennes et comportent des valeurs exceptionnelles comme l'Albanie pour les pays socialites ou le Portugal pour les pays capitalistes et (2) la variance des deux échantillons (leur hétérogénéité interne) n'est pas égale ce qui peut fausser l'usage du test de Student. Dans le cas présent, un bon statisticien préférerait sans doute utiliser un test non paramétrique, fondé sur la comparaison de l'ordre des observations et non pas leur valeur. 
+
+Soit par exemple le test de Wilcoxon, qu'il est très facile de mettre en oeuvre sour R en changeant à peine notre programme. 
+
+```{r}
+# Test non paramétrique d'égalité des médianes de Wilcoxon (correct)
+ wilcox.test(euro$TMI~euro$BLOC) 
+
+```
+
+LA p-value est désormais égale à 0.0001 et on peut conclure avec certitude à l'existence de différence entre nos deux échantillons, ce qui n'était pas le cas avec le test de student, moins adapté au cas étudié. 
+
+## ANALYSE 2 (Y Quanti / X Quanti) 
+
+La mortalité infantile (Y) peut-elle être estimée à l'aide du PIB/habitant (X) ? 
+
+Cette exemple de mise en relation de deux variables quantitatives permet de passer rapidement en revue les principe de base de l'analyse des corrélations entre plusieurs variables et de la réalisation d'un modèle d'ajustement linéaire. Il faut toutefois noter que l'exemple a surtout des vertus pédagogiques car le PNB/hab. des pays socialistes d'Europe en 1988 n'était pas véritablement connu et reposait sur des estimations. 
+
+### Extraction d'une matrice à partir d'un tableau
+
+Beaucoup de packages R ne sont pas adaptés au traitement tableau de données hétérogènes (type **data.frame**) mélangeant des variables qualitatives ou quantitatives. Il est donc souvent nécessaire d'extraire d'un tableau hétérogène les seuls variables quantitatives pour en faire un ensemble de lignes et de colonnes de nature homogène (type **matrix**). Cette matrice aura comme identifiant de colonnes le nom des variables (**colnames**) et il est pratique de lui ajouter comme nom de ligne l'identifiant des individus (**rownames**). Voici comment procéder :
+
+
+
+```{r}
+mat<-as.matrix(euro[,c("TMI","PNB","URB","FEC","POP")])
+rownames(mat)<-euro$PAYS
+mat
+dim(mat)
+str(mat)
+
+```
+
+
+### Calcul des corrélations
+
+La façon la plus simple de calculer un coefficient de corrélation est d'appliquerla fonction *cor* à une matrice :
+
+```{r}
+# Coefficients de corrélation de pearson
+cor(mat)
+```
+
+R calcule par débaut le coefficient de corrélation linéaire de Bravais-Pearson qui varie entre -1 (corrélation négative parfaite) et +1 (corrélation positive parfaite). On peut ainsi voir que le taux de mortalité infantile (TMI) a une très forte corrélation positive avec l'indice conjonctuel de fécondité (+0.81) et une forte corrélation négative avec le PNB/hab (-0.68) ou le taux d'urbanisation (-0.65). La corrélationavec la population du pays est négative mais faible (-0.14).
+
+Cette procédure n'est cependant pas totalement convaincante d'un point de vue statistique car elle n'affiche pas le degré de *significativité* de la liaison statistique, la fameuse *p-value* dont nous avons discuté dans l'exemple précédent. Cette significativité dépend en effet à la fois (1) de la valeur absolue du coefficient de corrélation (plus on se rapproche de +1 ou -1,plus la relation est significative) mais aussi (2) de la taille de l'échantillon utilisé pour calculer cette corrélation, appelée nombre de degrés de liberté. Lorsqu'on calcule un coefficient de corrélation, le nombre de dégré de liberté est égal à (N-2) c'est-àdire au nombre d'observations (N) moins le nombre de paramètres utilisés pour faire le calcul (soit 2, puisqu'on a besoin de la moyenne de X et de celle de Y).
+
+On va donc plutôt faire appel à la procédure *rcorr* qui se trouve dans le package **Hmisc**.
+
+
+```{r, message=FALSE,}
+# Coefficient de corrélation de Peason avec test de significativité
+library(Hmisc)
+rcorr(mat, type="pearson")
+```
+
+On voit ainsi apparaître deux tableaux, l'un avec les coefficients de corrélation des variables et l'autre avec les p-value associées à chacun de ces coefficients. Il apparaît alors que les corrélations du taux de mortalité infantile sont très significatives (<0.001) avec le PNB/hab, le taux d'urbanisation et l'indice conjoncturel de fécondité. Mais que la corrélation entre mortalité infantile et population est non-significative. 
+
+Ajoutons maintenant une autre précaution statistique consistant à calculer un autre coefficient de corrélation, le coefficient de corrélation de rang aussi appelé coefficient de Spearman. L'intérêt de ce coefficient est tout d'abord de limiter le jeu des valeurs exceptionelles (**outlier**) qui sont liées à la position excentré d'une seule observation. Mais c'est aussi plus généralement de mettre en évidence des **relations croissantes ou décroissantes de forme non-linéaire** entre deux variables. En présence de ces deux types de singularité, le coefficient de Spearman affiche souvent des valeurs très divergentes de celui de Pearson. Et la découverte d'une discordance entre les deux coefficients est un indice à ne pas négliger.  
+
+
+```{r}
+# Coefficient de corrélation de Peason avec test de significativité
+rcorr(mat, type="spearman")
+```
+
+Dans l'exemple (ancien mais pédagogique) qui a été choisi, il y a clairement une singularité dans la relation entre TMI et PNB puisque la corrélation qui était de (+0.68) avec le coefficient de Pearson grimpe à (+0.90) avec celui de Spearman. Dans le même temps, la relation entre TMI et FEC chute de (+0.81) à (+0.51) ce qui indique une autre singularité. Il faudra donc examinr soigneusement les nuages de points pour comprendre d'où viennent ces divergences, ce que l'on va faire au cours de l'étape suivante. 
+
+### Visualisation de la forme de la relation entre deux variables quantitatives
+
+On peut visualiser une relations entre deux variables X et Y à l'aide de l'instruction générique *plot()*. Soit par exemple la relation entre urbanisation et mortalité infantile :
+
+
+```{r}
+plot(euro$URB,euro$TMI)
+```
+
+On peut également ranger plusieurs graphiques en une seule figure en utilisant l'instruction générale *par* qui définit le format des graphiques, associée au paramètre *mfrow* qui indique combien de lignes et de colonnes on souhaite générer. Chacune des case de ce tableau servira successivement à afficher les graphiques demandés par l'instruction plot. Ici, nous déclarons que nous voulons ordonner les graphiques sur 2 lignes et 2 colonnes puis nous executons 4 fois de suite l'instruction plot.
+
+
+```{r}
+# Un seul graphique de synthèse
+par(mfrow= c(2,2)) 
+plot(euro$PNB,euro$TMI)
+plot(euro$URB,euro$TMI)
+plot(euro$FEC,euro$TMI)
+plot(euro$POP,euro$TMI)
+
+```
+
+Ces figures permettent (avec un peu d'habitude ...) d'expliquer les divergences observées entre les coefficients de corrélation de Pearson et de Spearman. 
+
+```{r}
+par(mfrow= c(1,2)) 
+
+X<-euro$PNB
+Y<-euro$TMI
+
+corlin<-round(cor(X,Y),3)
+reglin<-lm(Y~X)
+plot(X,Y, main=paste("Coeff Pearson = ",corlin))
+abline(reglin,col="red")
+
+rankX<-rank(X)
+rankY<-rank(Y)
+corrank<-round(cor(rankX,rankY),3)
+regrank<-lm(rankY~rankX)
+plot(rankX,rankY, main=paste("Coeff Spearman = ",corrank))
+abline(regrank,col="red")
+
+```
+
+
+- la relation entre TMI et PNB est clairement non linéaire et forme un arc de parabole plutôt qu'une droite. C'est la raison pour laquelle le coefficient de Spearman était beaucoup plus élevé que celui de Pearson. En effet, lorsque l'on transforme les variables en rang, la courbure disparaît.
+
+```{r}
+par(mfrow= c(1,2)) 
+
+X<-euro$FEC
+Y<-euro$TMI
+
+corlin<-round(cor(X,Y),3)
+reglin<-lm(Y~X)
+plot(X,Y, main=paste("Coeff Pearson = ",corlin))
+abline(reglin,col="red")
+
+rankX<-rank(X)
+rankY<-rank(Y)
+corrank<-round(cor(rankX,rankY),3)
+regrank<-lm(rankY~rankX)
+plot(rankX,rankY, main=paste("Coeff Spearman = ",corrank))
+abline(regrank,col="red")
+
+```
+
+
+- la relation entre TMI et FEC est quant à elle influencée par une valeur exceptionnelle, l'Albanie, qui affiche une fécondité et une mortalité infantile excpetionnnelles. Le point Albanie est situé très en dehors du nuage des autres points et il fait fortement augmenter le coefficient de Pearson. Mais si l'on passe en rang, son effet disparaît et le nuage de point apparaît beaucoup moins linéaire, ce qui explique la valeur plus faible du coefficient de Spearman. 
+
+**Le point important à retenir** (en l'absence de la lecture d'un manuel de statistique plus précis) est qu'on ne doit pas tenter de faire passer une droite dans un nuage de points si celui-ci ne forme pas un ensemble de points régulièrement alignés. Il faut éviter d'utiliser la régression linéaire sur un nuage de points ayant une courbure ou sur un nuage de points comportant des valeurs exceptionnelles. On va voir dans la section suivante quelques "trucs" permettant de corriger la forme d'un nuage de point inadapté à une analyse de régression linéaire (ce qui ne dispense pas de lire un manuel de statistique expliquant ces trucs à l'aide des concepts plus précis d'autocorrélation des résidus, d'hétéroscédasticité, etc...)
+
+### Un premier modèle de régression linéaire (quick & dirty ...)
+
+Le calcul d'une régression linéaire se fait très facilement avec l'instruction **lm** qui est l'acronyme de *linear model*. La particularité de R par rapport à d'autres logiciels est de stocker les résultats d'une régression (et plus généralement d'un modèle statistique quelconque) dans un objet dont on choisit le nom (ici : *MonModele*). C'est objet est uen sorte de grand sac sans fonds contenant des dizaines de résultats que l'on peut sortir un par un en fonction de ses besoins et surtout de ses connaissances en statistiques... Les débutants se limiteront à demander de sortir du sac à malice un résumé (*summary*) de la régression qu'ils viennent d'opérer :
+
+```{r}
+MonModele <- lm(euro$TMI~euro$PNB)
+summary(MonModele)
+```
+
+On trouve dans ce résumé l'essentiel à savoir l'équation de la droite de régression linéaire dans la partie coefficient (TMI = -0.00114 * PNB + 21.34), le pouvoir explicatif du modèle qui est le carré du coefficient de corrélation appelé en anglais R-Squared (0.457 soit 46%) et la significativité générale du modèle qui est fournie par la p-value (0.00028). Cette dernière est en l'occurence conforme au coefficient de corrélation entre TMI et PNB car nous faisons une régression simple. On verra ultérieurement le cas des régressions multiples. 
+
+La visualisation de cette droite de régression peut se faire très simplement en traçant le nuage de point avec **plot** et en ajoutant la droite en utilisant l'instruction **abline** appliquée au sac à malice où se trouvent les résultats de notre modèle. Même si nous ignorons le contenu détaillé de ce sac, nous savons que R va y trouver les éléments utiles à savoir les coefficients de la droite de régression que nous avons déjà vu dans le résumé. On va faire un petit effort d'habillage en ajoutant à la figure un titre principal (*main*) et des titres d'axes (*xlab,ylab*). 
+
+```{r}
+par(mfrow=c(1,1))
+plot(euro$PNB,euro$TMI,
+     main=" Richesse et mortalité infantile en Europe vers 1988",
+     ylab="PNB en $ par habitant (1988)",
+     xlab="Taux de mortalité infantile en p. 1000 (1988)") 
+abline(MonModele, col="red")
+```
+
+Nous avons réussi à faire notre premier modèle de régression sous R ! Mais la vérité oblige à dire qu'il n'est pas satisfaisant puisque nous avons ajusté une droite dans un nuage de point qui est manifestement de forme non linéaire. Essayons de faire mieux, en montrant que la question statistique peut recouper des question plus théoriques de géographie économique et de géographie politique. 
+
+### Un deuxième modèle plus satisfaisant sur le plan statistique et théorique
+
+La courbure de la relation entre PNB/habitant et taux de mortalité infantile est certes un problème statistique. Mais elle soulève aussi une question théorique plus intéressante : *Est-il raisonnable et logique de penser que plus le PNB/hab. augmente, plus la mortalité infantiel décroît de façon linéaire ?*
+
+Notre modèle précédent (Y=aX+b) est en partie absurde puisqu'il nous dit que la mortalité infantile minimale est de 21.34°/°° dans un pays ayant un PNB nul (on sait qu'il existe des mortalité infantile plus forte) et surtout il suppose que chaque fois que le PNB augmente de 1000 $, la mortalité infantile baisse de 1.1 °/°°. Du coup, ce modèle prévoit une absence totale de mortalité infantile pour les pays ayant un revenu supérieur à 15000 $/hab. Et il annonce froidement des **mortalités infantile négatives** au delà de ce niveau de richesse ! Bref, il y a une inconsistance logique dans un tel modèle, indépendamment du problème statistique de non linéarité. 
+
+Or, ce que nous disent les théoriciens du développement comme A. Sen est l'existence de rendements décroissant dans les progrès au fur et à mesure que la richesse augmente. En d'autres termes, la mortalité infantile diminue rapidement quant on passe de l'extrême apuvreté à la pauvreté. Mais ensuite elle baisse de moins en moins vite et son effet devient négligeable au delà d'un seuil de richesse. Le modèle correspondant à ces hypothèses théoriques est donc un modèle de décroissance non linéaire.
+
+Il peut s'agir d'une loi exponentielle négative qui peut s'écrire Y = b.exp(-aX), ce que l'on peut transformer en équation linéaire en le réécrivant sous la forme log(Y) = log(b)+aX. Ou bien d'une loi puissance négative qui peut s'écrire Y = b.X^a et se transforme en équation linéaire log(y) = a.log(X)+log(b). Si l'on n'a pas de préférence théorique pour l'une ou l'autre de ces lois, on peut simplement examiner celle qui donne le meilleur ajustement linéaire après transformation logarithmique :
+
+```{r}
+par(mfrow= c(1,2)) 
+
+X<-euro$PNB
+Y<-euro$TMI
+
+corexp<-round(cor(X,log(Y)),3)
+regexp<-lm(log(Y)~X)
+plot(X,log(Y), main=paste("Modèle exponentiel : r = ",corexp))
+abline(regexp,col="red")
+
+corpui<-round(cor(log(X),log(Y)),3)
+regpui<-lm(log(Y)~log(X))
+plot(log(X),log(Y), main=paste("Modèle puissance : r = ",corpui))
+abline(regpui,col="red")
+
+```
+
+La comparaison des coefficients de corrélation mais aussi l'examen de la forme des nuages de points plaide clairement en faveur du choix du modèle puissance. Il demeure en effet une nette courbure du nuage de points dans le graphique du modèle exponentiel et l'ajustement obtenu est plus faible. Le modèle puissance affiche un alignement presque parfait des points avec une corrélation très élevée. Donc, *si l'on ne dispose pas d'arguments théoriques ou empiriques particuliers en faveur du modèle exponentiel*, on retiendra le modèle puissance pour modéliser la relation entre mortalité infantile et PNB/habitant des pays européens en 1988.
+
+### Un troisième modèle : la revanche des pays socialistes ...
+
+Comme nous savons désormais (1) que la mortalité infantile varie fortement entre les pays socialistes et capitalistes et (2) que la mortalité infantile dépend de la richesse par habitant, on peut proposer un dernier modèle qui va faire intervenir simultanément les variables. Il existe de nombreuses variantes pour construire un tel modèle que vous apprendrez dans les cours sur la régression multiple ou l'analyse multi-niveaux. On se limitera ici à une approche plus intuitive qui ne présuppose pas encore de connaître des techniques statistiques poussées.
+
+Examinons tout d'abord la relation TMI*PNB dans les pays socialistes :
+
+```{r}
+par(mfrow=c(1,1))
+summary(euro$PNB)
+eurosoc<-euro[euro$BLOC=="Soc",]
+MonModele2soc <- lm(eurosoc$TMI~eurosoc$PNB)
+summary(MonModele2soc)
+plot(eurosoc$PNB,eurosoc$TMI,
+                           xlim=c(0,6000),
+                            ylim=c(0,50),
+                           main=" Pays socialistes",
+                           ylab="PNB en $ par habitant (1988)",
+                           xlab="Taux de mortalité infantile en p. 1000 (1988)") 
+abline(MonModele2soc, col="red")
+```
+
+La relation semble bien linéaire avec une valeur initiale forte de mortalité infantile (coefficient b=40.4) et une décroissance rapide de la mortalité infantile lorsque le PNB augmente (coefficient a = -0.009). La mortalité infantile baisse de 9 points chaque fois que le PNB augmente de 1000 $. On peut estimer qu'au delà d'un PNB de 5000 $ environ, la mortalité infantile n'existera plus dans les pays socialistes.
+
+
+Examinons maintenant séparément la situation dans les pays capitalistes
+```{r}
+par(mfrow=c(1,1))
+eurocap<-euro [euro$BLOC=="Cap",]
+MonModele2cap <- lm(eurocap$TMI~eurocap$PNB)
+summary(MonModele2cap)
+plot(eurocap$PNB,eurocap$TMI,
+    xlim=c(0,20000),
+    ylim=c(0,20),
+     main=" Pays capitalistes",
+     ylab="PNB en $ par habitant (1988)",
+     xlab="Taux de mortalité infantile en p. 1000 (1988)") 
+abline(MonModele2cap, col="blue")
+
+```
+
+La relation semble à nouveauà peu près linéaire. La valeur initiale de mortalité infantile est plus faible que dans les pays socialistes (coefficient a = 13.1) mais ensuite la décroissance est lente lorsque le PNB augmente (coefficient a = -0.0004). La mortalité infantile ne baisse que de 0.4 points lorsque le PNB augmente de 1000 $. Il faudrait donc un PNB d'environ 30000 $ par habitant pour que la mortalité infantile disparaissent dans les pays capitalistes, alors qu'il suffisant de 5000 $ par habitant dans les pays socialistes !
+
+
+On va résumer ce dernier modèle par une seule figure sur laquelle on affichera simultanément les deux droites de régression. 
+
+```{r}
+par(mfrow=c(1,1))
+
+plot(euro$PNB,euro$TMI,
+    xlim=c(0,20000),
+    ylim=c(0,50),
+     main="Influence du niveau de vie et du syème politique sur la mortalité infantile",
+     xlab="PNB en $ par habitant (1988)",
+     ylab="Taux de mortalité infantile en p. 1000 (1988)") 
+
+points(eurosoc$PNB,eurosoc$TMI,col="red")
+text(eurosoc$PNB,eurosoc$TMI,eurosoc$PAYS,col="red",cex=0.5,pos=4)
+abline(MonModele2soc,col="red")
+
+points(eurocap$PNB,eurocap$TMI,col="blue")
+text(eurocap$PNB,eurocap$TMI,eurocap$PAYS,col="blue",cex=0.5,pos=4)
+abline(MonModele2cap,col="blue")
+
+```
+
+Selon ce modèle, on pouvait penser en 1988 qu'un pays capitaliste comme le Portugal devrait très fortementaccroître son PNB par habitant pour voir baisser sa mortalité infantile. Inversement, la Pologne qui était un pays socialiste aurait du voir rapidement sa situation s'améliorer, pour peu qu'elle accroisse légèrement son PNB/habitant. Mais on ne saura jamais si le modèle aurait été vérifié puisque le bloc socialiste s'est dissous en 1989 ...
+
+
+
+
+
+
