@@ -1,0 +1,300 @@
+CODE	CON2	CON3	DIST	QUAR	VIL	CLAN	SEXE	SELF	BUD	TABLE	SALON	AGE	ETU5	ETU2
+237	Oui	2	3	Elig Messobo	Yemessoa II	Béti	Homme	(1) Petit	3950	Non	Non	19	ETU3 : CEP-CAP	ETU2 : Supérieur au CEP
+98	Non	0	20	Nkol Nguégué	Yemessoa I	Béloua	Homme	(1) Petit	3700	Oui	Non	20	ETU3 : CEP-CAP	ETU2 : Supérieur au CEP
+157	Non	0	30	Biling Bitom	Yemessoa I	Béloua	Homme	(1) Petit	1250	Non	Non	21	ETU5 : BEPC et +	ETU2 : Supérieur au CEP
+325	Oui	1	10	Elig Messobo	Yemessoa II	Béti	Homme	(2) Moyen	2200	Oui	Non	21	ETU3 : CEP-CAP	ETU2 : Supérieur au CEP
+299	Oui	1	10	Nkol Ambenbe	Yemessoa III	Béti	Homme	(3) Grand	4450	Oui	Non	21	ETU3 : CEP-CAP	ETU2 : Supérieur au CEP
+91	Non	0	1000	Nkol Mekongo	Yemessoa III	Béti	Femme	(1) Petit	1500	Oui	Oui	22	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+215	Oui	1	20	Biling Bitom	Yemessoa I	Béti	Homme	(2) Moyen	1150	Oui	Non	24	ETU5 : BEPC et +	ETU2 : Supérieur au CEP
+48	Oui	2	15	Elig Messobo	Yemessoa II	Béti	Homme	(2) Moyen	8550	Non	Non	25	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+50	Oui	2	30	Elig Messobo	Yemessoa II	Béti	Homme	(3) Grand	13575	Non	Non	26	ETU5 : BEPC et +	ETU2 : Supérieur au CEP
+154	Non	0	50	Biling Bitom	Yemessoa I	Béti	Homme	(1) Petit	1750	Non	Non	28	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+253	Oui	1	100	Mebang Mengoe	Yemessoa I	Béti	Homme	(2) Moyen	17100	Oui	Oui	28	ETU3 : CEP-CAP	ETU2 : Supérieur au CEP
+32	Non	0	50	Nkol Ambenbe	Yemessoa III	Béti	Femme	(2) Moyen	1250	Oui	Non	28	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+26	Non	0	15	Nkol Ambenbe	Yemessoa III	Béti	Homme	(1) Petit	8500	Oui	Oui	28	ETU4 : Collège	ETU2 : Supérieur au CEP
+153	Non	0	50	Biling Bitom	Yemessoa I	Béti	Homme	(1) Petit	1650	Non	Non	30	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+341	Non	0	600	Elig Messobo	Yemessoa II	Béti	Homme	(1) Petit	3300	Non	Non	30	ETU3 : CEP-CAP	ETU2 : Supérieur au CEP
+284	Non	0	650	Zogo Ntso	Yemessoa I	Béti	Homme	(3) Grand	3100	Oui	Non	30	ETU5 : BEPC et +	ETU2 : Supérieur au CEP
+145	Oui	1	20	Biling Bitom	Yemessoa I	Béti	Homme	(1) Petit	1250	Oui	Non	31	ETU3 : CEP-CAP	ETU2 : Supérieur au CEP
+307	Non	0	1	Elig Messobo	Yemessoa II	Béti	Homme	(2) Moyen	4000	Oui	Non	31	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+323	Non	0	250	Elig Messobo	Yemessoa II	Béti	Homme	(1) Petit	3250	Oui	Non	31	ETU3 : CEP-CAP	ETU2 : Supérieur au CEP
+209	Non	0	15	Mebang Mengoe	Yemessoa I	Béti	Homme	(2) Moyen	9000	Non	Oui	31	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+56	Non	0	15	Nkol Ambenbe	Yemessoa III	Béti	Homme	(2) Moyen	5000	Non	Non	31	ETU4 : Collège	ETU2 : Supérieur au CEP
+23	Oui	1	20	Nkol Ambenbe	Yemessoa III	Béti	Homme	(1) Petit	3700	Oui	Non	31	ETU5 : BEPC et +	ETU2 : Supérieur au CEP
+97	Non	0	15	Nkol Nguégué	Yemessoa I	Béti	Homme	(2) Moyen	1300	Oui	Non	31	ETU4 : Collège	ETU2 : Supérieur au CEP
+116	Non	0	20	Nkol Nguégué	Yemessoa I	Béti	Homme	(1) Petit	1650	Oui	Non	31	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+136	Oui	2	10	Biling Bitom	Yemessoa I	Béti	Homme	(1) Petit	3700	Oui	Oui	32	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+172	Oui	1	20	Biling Bitom	Yemessoa I	Béti	Homme	(2) Moyen	1850	Oui	Non	32	ETU4 : Collège	ETU2 : Supérieur au CEP
+130	Oui	2	30	Biling Bitom	Yemessoa I	Béloua	Homme	(1) Petit	3100	Oui	Non	32	ETU3 : CEP-CAP	ETU2 : Supérieur au CEP
+75	Non	0	1000	Edip Ndam	Yemessoa III	Béti	Femme	(1) Petit	1200	Non	Non	32	ETU1: Aucun	ETU1: inférieur au CEP
+224	Oui	2	15	Mebang Mengoe	Yemessoa I	Béti	Homme	(3) Grand	13150	Oui	Oui	32	ETU4 : Collège	ETU2 : Supérieur au CEP
+191	Oui	2	15	Elig Messobo	Yemessoa II	Béti	Homme	(2) Moyen	3650	Non	Non	33	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+21	Non	0	20	Nkol Ambenbe	Yemessoa III	Béti	Homme	(1) Petit	10265	Non	Non	33	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+22	Oui	1	100	Nkol Ambenbe	Yemessoa III	Béti	Homme	(3) Grand	3950	Oui	Non	33	ETU3 : CEP-CAP	ETU2 : Supérieur au CEP
+256	Non	0	1000	Zogo Ntso	Yemessoa I	Béti	Femme	(2) Moyen	1800	Oui	Non	33	ETU3 : CEP-CAP	ETU2 : Supérieur au CEP
+221	Non	0	300	Biling Bitom	Yemessoa I	Béti	Homme	(1) Petit	2550	Oui	Non	34	ETU4 : Collège	ETU2 : Supérieur au CEP
+228	Oui	2	8	Mebang Mengoe	Yemessoa I	Béti	Homme	(3) Grand	3500	Oui	Non	34	ETU4 : Collège	ETU2 : Supérieur au CEP
+115	Non	0	15	Nkol Nguégué	Yemessoa I	Béti	Homme	(1) Petit	7125	Oui	Oui	34	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+119	Oui	1	20	Biling Bitom	Yemessoa I	Béti	Femme	(3) Grand	950	Oui	Oui	35	ETU5 : BEPC et +	ETU2 : Supérieur au CEP
+174	Oui	2	15	Biling Bitom	Yemessoa I	Béti	Homme	(2) Moyen	3155	Non	Non	35	ETU5 : BEPC et +	ETU2 : Supérieur au CEP
+179	Oui	2	25	Biling Bitom	Yemessoa I	Béti	Homme	(3) Grand	3600	Oui	Non	35	ETU5 : BEPC et +	ETU2 : Supérieur au CEP
+189	Oui	2	100	Biling Bitom	Yemessoa I	Béti	Homme	(1) Petit	17350	Oui	Oui	35	ETU5 : BEPC et +	ETU2 : Supérieur au CEP
+263	Oui	2	5	Elig Messobo	Yemessoa II	Béti	Homme	(1) Petit	3900	Oui	Non	35	ETU5 : BEPC et +	ETU2 : Supérieur au CEP
+290	Oui	2	5	Elig Messobo	Yemessoa II	Béti	Homme	(1) Petit	13475	Oui	Non	35	ETU5 : BEPC et +	ETU2 : Supérieur au CEP
+293	Oui	2	7	Elig messobo	Yemessoa II	Béti	Homme	(3) Grand	6975	Oui	Oui	35	ETU5 : BEPC et +	ETU2 : Supérieur au CEP
+274	Non	0	1000	Mebang Mengoe	Yemessoa I	Béti	Homme	(1) Petit	15500	Non	Non	35	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+72	Oui	2	10	Nkol Ambenbe	Yemessoa III	Béti	Homme	(3) Grand	7850	Oui	Oui	35	ETU5 : BEPC et +	ETU2 : Supérieur au CEP
+70	Oui	1	20	Nkol Ambenbe	Yemessoa III	Béti	Homme	(2) Moyen	5100	Oui	Oui	35	ETU4 : Collège	ETU2 : Supérieur au CEP
+34	Non	0	25	Nkol Ambenbe	Yemessoa III	Béti	Homme	(3) Grand	23000	Oui	Oui	35	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+89	Non	0	1500	Nkol Mekongo	Yemessoa III	Béloua	Homme	(1) Petit	3350	Non	Non	35	ETU4 : Collège	ETU2 : Supérieur au CEP
+131	Non	0	200	Nkol Nguégué	Yemessoa I	Béti	Homme	(1) Petit	950	Non	Non	35	ETU5 : BEPC et +	ETU2 : Supérieur au CEP
+144	Oui	2	10	Biling Bitom	Yemessoa I	Béti	Homme	(1) Petit	2700	Oui	Non	36	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+123	Oui	2	30	Biling Bitom	Yemessoa I	Béloua	Homme	(3) Grand	10550	Oui	Oui	36	ETU5 : BEPC et +	ETU2 : Supérieur au CEP
+199	Oui	2	10	Elig Messobo	Yemessoa II	Béti	Homme	(2) Moyen	3000	Oui	Non	36	ETU5 : BEPC et +	ETU2 : Supérieur au CEP
+7	Oui	2	50	Nkol Ambenbe	Yemessoa III	Béti	Homme	(1) Petit	26000	Oui	Oui	36	ETU5 : BEPC et +	ETU2 : Supérieur au CEP
+132	Non	0	50	Nkol Nguégué	Yemessoa I	Béloua	Femme	(2) Moyen	1850	Oui	Non	36	ETU4 : Collège	ETU2 : Supérieur au CEP
+291	Oui	2	10	Elig Messobo	Yemessoa II	Béti	Homme	(1) Petit	5700	Oui	Non	37	ETU4 : Collège	ETU2 : Supérieur au CEP
+197	Non	0	800	Elig Messobo	Yemessoa II	Béti	Homme	(2) Moyen	1850	Non	Non	37	ETU1: Aucun	ETU1: inférieur au CEP
+83	Non	0	1500	Elig Messobo	Yemessoa II	Béloua	Homme	(3) Grand	3700	Non	Non	37	ETU3 : CEP-CAP	ETU2 : Supérieur au CEP
+230	Non	0	30	Mebang Mengoe	Yemessoa I	Béti	Homme	(2) Moyen	36000	Oui	Non	37	ETU3 : CEP-CAP	ETU2 : Supérieur au CEP
+35	Non	0	15	Nkol Ambenbe	Yemessoa III	Béti	Homme	(3) Grand	3500	Non	Non	37	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+92	Non	0	1800	Nkol Mekongo	Yemessoa III	Béloua	Homme	(3) Grand	3250	Non	Non	37	ETU3 : CEP-CAP	ETU2 : Supérieur au CEP
+135	Non	0	30	Biling Bitom	Yemessoa I	Béloua	Femme	(1) Petit	1300	Non	Non	38	ETU1: Aucun	ETU1: inférieur au CEP
+181	Non	0	30	Biling Bitom	Yemessoa I	Béti	Homme	(2) Moyen	3200	Non	Oui	38	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+310	Oui	1	10	Elig Messobo	Yemessoa II	Béti	Femme	(1) Petit	4750	Oui	Non	38	ETU4 : Collège	ETU2 : Supérieur au CEP
+301	Non	0	15	Nkol Ambenbe	Yemessoa III	Béti	Homme	(3) Grand	3875	Oui	Non	38	ETU3 : CEP-CAP	ETU2 : Supérieur au CEP
+287	Non	0	700	Zogo Ntso	Yemessoa I	Béti	Homme	(2) Moyen	6025	Non	Non	38	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+150	Oui	2	30	Biling Bitom	Yemessoa I	Béti	Homme	(2) Moyen	2100	Oui	Oui	39	ETU4 : Collège	ETU2 : Supérieur au CEP
+151	Oui	2	30	Biling Bitom	Yemessoa I	Béti	Homme	(2) Moyen	3000	Non	Non	39	ETU3 : CEP-CAP	ETU2 : Supérieur au CEP
+342	Oui	2	5	Elig Messobo	Yemessoa II	Béti	Homme	(2) Moyen	2675	Oui	Non	39	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+49	Oui	2	20	Elig Messobo	Yemessoa II	Béti	Homme	(3) Grand	3310	Oui	Oui	39	ETU3 : CEP-CAP	ETU2 : Supérieur au CEP
+315	Non	0	20	Elig Messobo	Yemessoa II	Béti	Homme	(2) Moyen	3900	Oui	Non	39	ETU3 : CEP-CAP	ETU2 : Supérieur au CEP
+328	Oui	2	20	Elig Messobo	Yemessoa II	Béti	Homme	(3) Grand	4500	Non	Non	39	ETU3 : CEP-CAP	ETU2 : Supérieur au CEP
+271	Oui	1	30	Elig Messobo	Yemessoa II	Béti	Homme	(2) Moyen	2250	Non	Non	39	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+273	Oui	1	350	Elig Messobo	Yemessoa II	Béti	Homme	(1) Petit	2100	Oui	Non	39	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+322	Non	0	300	Edip Ndam	Yemessoa III	Béti	Femme	(3) Grand	3875	Oui	Oui	40	ETU4 : Collège	ETU2 : Supérieur au CEP
+294	Non	0	10	Elig Messobo	Yemessoa II	Béloua	Homme	(3) Grand	850	Non	Non	40	ETU4 : Collège	ETU2 : Supérieur au CEP
+227	Oui	1	300	Mebang Mengoe	Yemessoa I	Béti	Homme	(2) Moyen	7100	Oui	Non	40	ETU4 : Collège	ETU2 : Supérieur au CEP
+252	Non	0	300	Mebang Mengoe	Yemessoa I	Béti	Homme	(2) Moyen	5400	Oui	Oui	40	ETU1: Aucun	ETU1: inférieur au CEP
+196	Non	0	800	Mebang Mengoe	Yemessoa I	Béti	Homme	(3) Grand	3950	Non	Non	40	ETU1: Aucun	ETU1: inférieur au CEP
+42	Oui	1	12	Nkol Ambenbe	Yemessoa III	Béti	Homme	(3) Grand	1250	Oui	Oui	40	ETU5 : BEPC et +	ETU2 : Supérieur au CEP
+36	Non	0	20	Nkol Ambenbe	Yemessoa III	Béti	Homme	(3) Grand	3500	Oui	Non	40	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+62	Non	0	20	Nkol Ambenbe	Yemessoa III	Béti	Homme	(3) Grand	10900	Oui	Oui	40	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+277	Oui	1	1000	Zogo Ntso	Yemessoa I	Béti	Homme	(3) Grand	9400	Oui	Non	40	ETU4 : Collège	ETU2 : Supérieur au CEP
+267	Oui	1	300	Elig Messobo	Yemessoa II	Béti	Homme	(1) Petit	3625	Oui	Non	41	ETU3 : CEP-CAP	ETU2 : Supérieur au CEP
+214	Oui	1	20	Mebang Mengoe	Yemessoa I	Béti	Femme	(2) Moyen	2975	Oui	Non	41	ETU3 : CEP-CAP	ETU2 : Supérieur au CEP
+275	Non	0	600	Mebang Mengoe	Yemessoa I	Béti	Homme	(1) Petit	2200	Non	Non	41	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+159	Non	0	500	Zogo Ntso	Yemessoa I	Béti	Homme	(3) Grand	3700	Oui	Oui	41	ETU1: Aucun	ETU1: inférieur au CEP
+187	Oui	2	15	Biling Bitom	Yemessoa I	Béti	Homme	(2) Moyen	33500	Oui	Oui	42	ETU5 : BEPC et +	ETU2 : Supérieur au CEP
+254	Oui	2	18	Mebang Mengoe	Yemessoa I	Béti	Homme	(3) Grand	23850	Oui	Oui	42	ETU5 : BEPC et +	ETU2 : Supérieur au CEP
+67	Non	0	5	Nkol Ambenbe	Yemessoa III	Béti	Homme	(2) Moyen	3000	Oui	Oui	42	ETU4 : Collège	ETU2 : Supérieur au CEP
+3	Oui	2	10	Nkol Ambenbe	Yemessoa III	Béti	Homme	(2) Moyen	3000	Oui	Oui	42	ETU3 : CEP-CAP	ETU2 : Supérieur au CEP
+38	Non	0	12	Nkol Ambenbe	Yemessoa III	Béti	Homme	(3) Grand	10000	Oui	Oui	42	ETU5 : BEPC et +	ETU2 : Supérieur au CEP
+9	Oui	1	50	Nkol Ambenbe	Yemessoa III	Béti	Homme	(2) Moyen	8500	Oui	Oui	42	ETU3 : CEP-CAP	ETU2 : Supérieur au CEP
+219	Oui	1	50	Biling Bitom	Yemessoa I	Béti	Homme	(2) Moyen	2650	Oui	Non	43	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+122	Oui	1	100	Biling Bitom	Yemessoa I	Béti	Homme	(2) Moyen	1550	Oui	Non	43	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+156	Oui	1	200	Biling Bitom	Yemessoa I	Béti	Homme	(2) Moyen	3200	Oui	Non	43	ETU4 : Collège	ETU2 : Supérieur au CEP
+340	Oui	2	5	Elig Messobo	Yemessoa II	Béti	Femme	(2) Moyen	3075	Oui	Non	43	ETU1: Aucun	ETU1: inférieur au CEP
+288	Oui	2	30	Elig Messobo	Yemessoa II	Béti	Homme	(2) Moyen	7325	Oui	Non	43	ETU3 : CEP-CAP	ETU2 : Supérieur au CEP
+330	Oui	2	40	Elig Messobo	Yemessoa II	Béti	Homme	(1) Petit	5700	Non	Non	43	ETU3 : CEP-CAP	ETU2 : Supérieur au CEP
+269	Oui	1	400	Elig Messobo	Yemessoa II	Béti	Homme	(2) Moyen	2950	Oui	Non	43	ETU3 : CEP-CAP	ETU2 : Supérieur au CEP
+82	Non	0	15	Nkol Ambenbe	Yemessoa III	Béti	Homme	(1) Petit	8800	Non	Non	43	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+114	Non	0	25	Nkol Nguégué	Yemessoa I	Béti	Homme	(3) Grand	3700	Non	Non	43	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+109	Non	0	30	Nkol Nguégué	Yemessoa I	Béti	Homme	(2) Moyen	800	Oui	Non	43	ETU3 : CEP-CAP	ETU2 : Supérieur au CEP
+112	Non	0	30	Nkol Nguégué	Yemessoa I	Béti	Homme	(2) Moyen	900	Oui	Non	43	ETU3 : CEP-CAP	ETU2 : Supérieur au CEP
+257	Non	0	1000	Zogo Ntso	Yemessoa I	Béti	Homme	(1) Petit	8025	Non	Non	43	ETU3 : CEP-CAP	ETU2 : Supérieur au CEP
+339	Oui	1	20	Elig Messobo	Yemessoa II	Béti	Homme	(3) Grand	1925	Non	Non	44	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+268	Non	0	250	Elig Messobo	Yemessoa II	Béti	Homme	(3) Grand	2050	Oui	Non	44	ETU3 : CEP-CAP	ETU2 : Supérieur au CEP
+259	Non	0	1000	Mebang Mengoe	Yemessoa I	Béti	Homme	(3) Grand	3250	Non	Non	44	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+125	Non	0	200	Nkol Nguégué	Yemessoa I	Béti	Homme	(2) Moyen	2000	Non	Non	44	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+169	Oui	2	1500	Zogo Ntso	Yemessoa I	Béti	Homme	(3) Grand	3300	Oui	Oui	44	ETU1: Aucun	ETU1: inférieur au CEP
+220	Oui	2	8	Biling Bitom	Yemessoa I	Béti	Homme	(3) Grand	3200	Non	Non	45	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+175	Oui	2	20	Biling Bitom	Yemessoa I	Béti	Homme	(3) Grand	2500	Oui	Non	45	ETU3 : CEP-CAP	ETU2 : Supérieur au CEP
+251	Non	0	25	Mebang Mengoe	Yemessoa I	Béti	Femme	(2) Moyen	1775	Oui	Oui	45	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+247	Non	0	200	Mebang Mengoe	Yemessoa I	Béti	Homme	(2) Moyen	2000	Oui	Non	45	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+186	Non	0	600	Nkol Mekongo	Yemessoa III	Béti	Homme	(3) Grand	17000	Oui	Oui	45	ETU3 : CEP-CAP	ETU2 : Supérieur au CEP
+15	Non	0	3000	Nkol Mekongo	Yemessoa III	Béti	Homme	(3) Grand	1850	Oui	Non	45	ETU3 : CEP-CAP	ETU2 : Supérieur au CEP
+107	Non	0	20	Nkol Nguégué	Yemessoa I	Béti	Homme	(1) Petit	800	Oui	Non	45	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+46	Oui	2	10	Elig Messobo	Yemessoa II	Béti	Homme	(2) Moyen	5350	Oui	Oui	46	ETU3 : CEP-CAP	ETU2 : Supérieur au CEP
+100	Oui	2	5	Nkol Nguégué	Yemessoa I	Béti	Homme	(3) Grand	2325	Oui	Oui	46	ETU3 : CEP-CAP	ETU2 : Supérieur au CEP
+327	Oui	2	5	Elig Messobo	Yemessoa II	Béti	Femme	(3) Grand	2000	Oui	Non	47	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+102	Non	0	150	Nkol Nguégué	Yemessoa I	Béloua	Homme	(1) Petit	900	Non	Non	47	ETU3 : CEP-CAP	ETU2 : Supérieur au CEP
+236	Oui	2	2	Biling Bitom	Yemessoa I	Béloua	Femme	(2) Moyen	3000	Non	Non	48	ETU3 : CEP-CAP	ETU2 : Supérieur au CEP
+143	Non	0	30	Biling Bitom	Yemessoa I	Béti	Homme	(3) Grand	1700	Oui	Oui	48	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+146	Non	0	30	Biling Bitom	Yemessoa I	Béti	Homme	(2) Moyen	3600	Non	Non	48	ETU3 : CEP-CAP	ETU2 : Supérieur au CEP
+320	Non	0	350	Edip Ndam	Yemessoa III	Béti	Femme	(3) Grand	2000	Non	Non	48	ETU3 : CEP-CAP	ETU2 : Supérieur au CEP
+326	Non	0	20	Elig Messobo	Yemessoa II	Béti	Homme	(3) Grand	10400	Non	Non	48	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+343	Non	0	500	Elig Messobo	Yemessoa II	Béti	Homme	(1) Petit	2300	Non	Non	48	ETU3 : CEP-CAP	ETU2 : Supérieur au CEP
+30	Non	0	30	Nkol Ambenbe	Yemessoa III	Béti	Homme	(3) Grand	1600	Oui	Non	48	ETU3 : CEP-CAP	ETU2 : Supérieur au CEP
+188	Non	0	550	Nkol Mekongo	Yemessoa III	Béti	Homme	(3) Grand	7825	Oui	Non	48	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+118	Oui	2	50	Nkol Nguégué	Yemessoa I	Béloua	Homme	(2) Moyen	3600	Non	Non	48	ETU3 : CEP-CAP	ETU2 : Supérieur au CEP
+126	Oui	2	5	Biling Bitom	Yemessoa I	Béti	Homme	(3) Grand	3775	Oui	Oui	49	ETU3 : CEP-CAP	ETU2 : Supérieur au CEP
+173	Oui	1	300	Biling Bitom	Yemessoa I	Béti	Homme	(2) Moyen	3250	Oui	Oui	49	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+194	Oui	2	5	Elig Messobo	Yemessoa II	Béti	Homme	(3) Grand	2200	Non	Non	49	ETU3 : CEP-CAP	ETU2 : Supérieur au CEP
+5	Oui	1	10	Nkol Ambenbe	Yemessoa III	Béti	Homme	(3) Grand	5000	Oui	Oui	49	ETU3 : CEP-CAP	ETU2 : Supérieur au CEP
+76	Non	0	20	Nkol Ambenbe	Yemessoa III	Béti	Homme	(2) Moyen	3200	Oui	Oui	49	ETU3 : CEP-CAP	ETU2 : Supérieur au CEP
+101	Non	0	20	Nkol Nguégué	Yemessoa I	Béloua	Homme	(1) Petit	1912	Oui	Non	49	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+95	Non	0	35	Nkol Nguégué	Yemessoa I	Béti	Homme	(3) Grand	2650	Oui	Non	49	ETU4 : Collège	ETU2 : Supérieur au CEP
+246	Non	0	1500	Nkol Nguégué	Yemessoa I	Béti	Homme	(2) Moyen	13003	Oui	Non	49	ETU3 : CEP-CAP	ETU2 : Supérieur au CEP
+255	Non	0	1000	Zogo Ntso	Yemessoa I	Béti	Homme	(3) Grand	45000	Non	Non	49	ETU1: Aucun	ETU1: inférieur au CEP
+149	Oui	2	10	Biling Bitom	Yemessoa I	Béti	Femme	(2) Moyen	2500	Non	Non	50	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+217	Oui	2	570	Biling Bitom	Yemessoa I	Béti	Femme	(2) Moyen	3675	Oui	Oui	50	ETU1: Aucun	ETU1: inférieur au CEP
+177	Oui	2	10	Biling Bitom	Yemessoa I	Béti	Homme	(2) Moyen	3200	Oui	Oui	50	ETU3 : CEP-CAP	ETU2 : Supérieur au CEP
+142	Oui	2	20	Biling Bitom	Yemessoa I	Béloua	Homme	(2) Moyen	3000	Oui	Non	50	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+296	Oui	2	7	Elig Messobo	Yemessoa II	Béti	Homme	(2) Moyen	2125	Oui	Non	50	ETU5 : BEPC et +	ETU2 : Supérieur au CEP
+272	Oui	1	350	Elig Messobo	Yemessoa II	Béti	Homme	(2) Moyen	5300	Non	Non	50	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+225	Oui	1	200	Mebang Mengoe	Yemessoa I	Béti	Homme	(3) Grand	5550	Non	Non	50	ETU5 : BEPC et +	ETU2 : Supérieur au CEP
+319	Non	0	12	Nkol Ambenbe	Yemessoa III	Béti	Homme	(3) Grand	4700	Non	Non	50	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+19	Non	0	60	Nkol Ambenbe	Yemessoa III	Béti	Homme	(2) Moyen	10250	Oui	Non	50	ETU3 : CEP-CAP	ETU2 : Supérieur au CEP
+90	Non	0	1700	Nkol Mekongo	Yemessoa III	Béloua	Femme	(3) Grand	10000	Oui	Non	50	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+65	Non	0	600	Nkol Mekongo	Yemessoa III	Béti	Homme	(3) Grand	7600	Oui	Non	50	ETU3 : CEP-CAP	ETU2 : Supérieur au CEP
+86	Non	0	1500	Nkol Mekongo	Yemessoa III	Béti	Homme	(2) Moyen	3800	Oui	Non	50	ETU3 : CEP-CAP	ETU2 : Supérieur au CEP
+282	Non	0	600	Zogo Ntso	Yemessoa I	Béti	Homme	(1) Petit	4700	Oui	Non	50	ETU4 : Collège	ETU2 : Supérieur au CEP
+164	Non	0	3000	Zogo Ntso	Yemessoa I	Béti	Homme	(2) Moyen	3250	Non	Non	50	ETU3 : CEP-CAP	ETU2 : Supérieur au CEP
+141	Non	0	15	Biling Bitom	Yemessoa I	Béti	Homme	(2) Moyen	3200	Non	Non	51	ETU3 : CEP-CAP	ETU2 : Supérieur au CEP
+309	Oui	2	15	Elig Messobo	Yemessoa II	Béti	Homme	(3) Grand	4800	Oui	Oui	51	ETU3 : CEP-CAP	ETU2 : Supérieur au CEP
+208	Oui	1	10	Mebang Mengoe	Yemessoa I	Béti	Homme	(3) Grand	6200	Oui	Oui	51	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+66	Oui	2	600	Nkol Mekongo	Yemessoa III	Béti	Homme	(2) Moyen	9030	Oui	Oui	51	ETU3 : CEP-CAP	ETU2 : Supérieur au CEP
+303	Non	0	2000	Zogo Ntso	Yemessoa I	Béti	Femme	(1) Petit	13000	Oui	Oui	51	ETU3 : CEP-CAP	ETU2 : Supérieur au CEP
+137	Non	0	7	Biling Bitom	Yemessoa I	Béti	Femme	(2) Moyen	1700	Oui	Non	52	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+239	Oui	2	1000	Biling Bitom	Yemessoa I	Béloua	Homme	(1) Petit	3825	Oui	Oui	52	ETU5 : BEPC et +	ETU2 : Supérieur au CEP
+68	Non	0	15	Nkol Ambenbe	Yemessoa III	Béti	Femme	(1) Petit	3700	Oui	Oui	52	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+317	Non	0	20	Nkol Ambenbe	Yemessoa III	Béti	Femme	(3) Grand	425	Non	Non	52	ETU1: Aucun	ETU1: inférieur au CEP
+201	Non	0	30	Nkol Ambenbe	Yemessoa III	Béti	Femme	(3) Grand	1600	Non	Non	52	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+94	Non	0	25	Nkol Nguégué	Yemessoa I	Béti	Homme	(3) Grand	3250	Oui	Non	52	ETU4 : Collège	ETU2 : Supérieur au CEP
+162	Non	0	2500	Zogo Ntso	Yemessoa I	Béti	Homme	(2) Moyen	3200	Oui	Oui	52	ETU1: Aucun	ETU1: inférieur au CEP
+163	Non	0	3000	Zogo Ntso	Yemessoa I	Béti	Homme	(2) Moyen	3700	Oui	Oui	52	ETU3 : CEP-CAP	ETU2 : Supérieur au CEP
+167	Non	0	3000	Zogo Ntso	Yemessoa I	Béti	Homme	(3) Grand	3700	Non	Non	52	ETU3 : CEP-CAP	ETU2 : Supérieur au CEP
+216	Non	0	800	Biling Bitom	Yemessoa I	Béti	Homme	(3) Grand	3150	Oui	Non	53	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+302	Oui	1	15	Elig Messobo	Yemessoa II	Béti	Homme	(3) Grand	8000	Non	Non	53	ETU3 : CEP-CAP	ETU2 : Supérieur au CEP
+311	Oui	1	400	Elig Messobo	Yemessoa II	Béti	Homme	(3) Grand	3750	Non	Non	53	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+69	Non	0	20	Nkol Ambenbe	Yemessoa III	Béloua	Femme	(3) Grand	3200	Oui	Oui	53	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+44	Oui	1	20	Nkol Ambenbe	Yemessoa III	Béti	Homme	(3) Grand	3850	Non	Oui	53	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+108	Non	0	20	Nkol Nguégué	Yemessoa I	Béti	Homme	(2) Moyen	1000	Oui	Oui	53	ETU5 : BEPC et +	ETU2 : Supérieur au CEP
+285	Non	0	800	Zogo Ntso	Yemessoa I	Béti	Homme	(3) Grand	6266	Non	Non	53	ETU1: Aucun	ETU1: inférieur au CEP
+140	Non	0	50	Biling Bitom	Yemessoa I	Béti	Homme	(2) Moyen	1900	Oui	Non	54	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+305	Non	0	15	Elig Messobo	Yemessoa II	Béti	Femme	(3) Grand	2000	Oui	Non	54	ETU1: Aucun	ETU1: inférieur au CEP
+265	Oui	2	20	Elig Messobo	Yemessoa II	Béti	Femme	(1) Petit	2300	Oui	Non	54	ETU1: Aucun	ETU1: inférieur au CEP
+80	Non	0	7	Nkol Ambenbe	Yemessoa III	Béloua	Femme	(3) Grand	12000	Non	Non	54	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+298	Non	0	20	Nkol Ambenbe	Yemessoa III	Béti	Homme	(3) Grand	8350	Non	Non	54	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+170	Oui	1	2000	Zogo Ntso	Yemessoa I	Béti	Homme	(3) Grand	3000	Oui	Oui	54	ETU1: Aucun	ETU1: inférieur au CEP
+168	Non	0	3000	Zogo Ntso	Yemessoa I	Béloua	Homme	(2) Moyen	1950	Oui	Oui	54	ETU1: Aucun	ETU1: inférieur au CEP
+222	Oui	2	7	Biling Bitom	Yemessoa I	Béti	Homme	(2) Moyen	3550	Oui	Oui	55	ETU4 : Collège	ETU2 : Supérieur au CEP
+185	Oui	2	15	Biling Bitom	Yemessoa I	Béti	Homme	(3) Grand	2600	Oui	Non	55	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+134	Non	0	110	Biling Bitom	Yemessoa I	Béti	Homme	(2) Moyen	2600	Oui	Oui	55	ETU3 : CEP-CAP	ETU2 : Supérieur au CEP
+63	Non	0	1000	Elig Messobo	Yemessoa II	Béti	Femme	(3) Grand	2550	Non	Non	55	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+295	Oui	1	150	Elig Messobo	Yemessoa II	Béti	Homme	(2) Moyen	7750	Oui	Non	55	ETU3 : CEP-CAP	ETU2 : Supérieur au CEP
+248	Oui	2	10	Mebang Mengoe	Yemessoa I	Béti	Homme	(2) Moyen	4600	Oui	Oui	55	ETU3 : CEP-CAP	ETU2 : Supérieur au CEP
+233	Oui	2	20	Mebang Mengoe	Yemessoa I	Béti	Homme	(3) Grand	3800	Oui	Oui	55	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+59	Non	0	25	Nkol Ambenbe	Yemessoa III	Béti	Femme	(3) Grand	7750	Oui	Non	55	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+206	Non	0	30	Nkol Ambenbe	Yemessoa III	Béti	Femme	(3) Grand	2200	Oui	Oui	55	ETU1: Aucun	ETU1: inférieur au CEP
+87	Non	0	1600	Nkol Mekongo	Yemessoa III	Béloua	Homme	(2) Moyen	5850	Oui	Non	55	ETU4 : Collège	ETU2 : Supérieur au CEP
+276	Non	0	1000	Zogo Ntso	Yemessoa I	Béti	Femme	(1) Petit	6450	Non	Non	55	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+304	Non	0	2000	Zogo Ntso	Yemessoa I	Béti	Femme	(1) Petit	7000	Oui	Non	55	ETU3 : CEP-CAP	ETU2 : Supérieur au CEP
+207	Non	0	1000	Zogo Ntso	Yemessoa I	Béti	Homme	(1) Petit	6150	Oui	Oui	55	ETU5 : BEPC et +	ETU2 : Supérieur au CEP
+4	Non	0	5	Nkol Ambenbe	Yemessoa III	Béti	Femme	(3) Grand	1150	Oui	Oui	56	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+77	Non	0	1700	Edip Ndam	Yemessoa III	Béti	Homme	(3) Grand	2000	Oui	Non	56	ETU4 : Collège	ETU2 : Supérieur au CEP
+203	Non	0	10	Elig Messobo	Yemessoa II	Béti	Homme	(3) Grand	6000	Oui	Oui	56	ETU4 : Collège	ETU2 : Supérieur au CEP
+292	Oui	2	12	Elig Messobo	Yemessoa II	Béti	Homme	(3) Grand	4700	Oui	Non	56	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+238	Oui	2	8	Mebang Mengoe	Yemessoa I	Béti	Femme	(3) Grand	6600	Non	Oui	57	ETU4 : Collège	ETU2 : Supérieur au CEP
+43	Oui	1	20	Nkol Ambenbe	Yemessoa III	Béti	Homme	(3) Grand	15250	Oui	Non	57	ETU3 : CEP-CAP	ETU2 : Supérieur au CEP
+286	Non	0	700	Zogo Ntso	Yemessoa I	Béti	Homme	(3) Grand	3000	Non	Non	57	ETU4 : Collège	ETU2 : Supérieur au CEP
+204	Non	0	10	Nkol Ambenbe	Yemessoa III	Béti	Homme	(3) Grand	5100	Oui	Oui	58	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+78	Non	0	15	Nkol Ambenbe	Yemessoa III	Béti	Homme	(3) Grand	2100	Oui	Non	58	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+331	Non	0	600	Nkol Mekongo	Yemessoa III	Béti	Homme	(2) Moyen	6600	Oui	Non	58	ETU4 : Collège	ETU2 : Supérieur au CEP
+160	Non	0	1800	Zogo Ntso	Yemessoa I	Béti	Homme	(3) Grand	1700	Non	Non	58	ETU1: Aucun	ETU1: inférieur au CEP
+171	Oui	2	13	Biling Bitom	Yemessoa I	Béti	Homme	(3) Grand	2250	Oui	Non	59	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+200	Non	0	500	Edip Ndam	Yemessoa III	Béti	Homme	(3) Grand	1350	Non	Non	59	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+47	Oui	2	5	Elig Messobo	Yemessoa II	Béti	Homme	(3) Grand	3850	Oui	Non	59	ETU1: Aucun	ETU1: inférieur au CEP
+129	Non	0	10	Biling Bitom	Yemessoa I	Béti	Femme	(2) Moyen	1600	Oui	Non	60	ETU1: Aucun	ETU1: inférieur au CEP
+332	Oui	2	10	Elig Messobo	Yemessoa II	Béti	Homme	(3) Grand	3750	Oui	Oui	60	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+244	Oui	2	5	Mebang Mengoe	Yemessoa I	Béti	Homme	(1) Petit	23200	Oui	Oui	60	ETU3 : CEP-CAP	ETU2 : Supérieur au CEP
+212	Oui	2	10	Mebang Mengoe	Yemessoa I	Béti	Homme	(3) Grand	2625	Non	Non	60	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+60	Oui	1	10	Nkol Ambenbe	Yemessoa III	Béti	Homme	(3) Grand	5850	Oui	Oui	60	ETU3 : CEP-CAP	ETU2 : Supérieur au CEP
+27	Non	0	25	Nkol Ambenbe	Yemessoa III	Béti	Homme	(3) Grand	1700	Oui	Oui	60	ETU4 : Collège	ETU2 : Supérieur au CEP
+88	Non	0	1300	Nkol Mekongo	Yemessoa III	Béti	Homme	(3) Grand	3250	Non	Non	60	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+117	Non	0	15	Nkol Nguégué	Yemessoa I	Béloua	Homme	(3) Grand	3700	Oui	Non	60	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+278	Oui	1	800	Zogo Ntso	Yemessoa I	Béti	Femme	(2) Moyen	9800	Oui	Oui	60	ETU1: Aucun	ETU1: inférieur au CEP
+120	Non	0	20	Biling Bitom	Yemessoa I	Béti	Femme	(3) Grand	1950	Oui	Non	61	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+40	Non	0	7	Nkol Ambenbe	Yemessoa III	Béloua	Homme	(3) Grand	5050	Oui	Oui	61	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+133	Non	0	15	Nkol Nguégué	Yemessoa I	Béti	Homme	(2) Moyen	1950	Oui	Oui	62	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+105	Non	0	100	Nkol Nguégué	Yemessoa I	Béti	Homme	(2) Moyen	900	Non	Non	62	ETU1: Aucun	ETU1: inférieur au CEP
+158	Oui	2	30	Biling Bitom	Yemessoa I	Béti	Homme	(2) Moyen	2950	Oui	Non	63	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+261	Oui	2	5	Elig Messobo	Yemessoa II	Béti	Femme	(2) Moyen	3050	Oui	Oui	63	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+266	Oui	2	15	Elig Messobo	Yemessoa II	Béti	Homme	(1) Petit	3850	Oui	Non	63	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+211	Oui	1	8	Mebang Mengoe	Yemessoa I	Béti	Homme	(2) Moyen	7150	Oui	Oui	63	ETU4 : Collège	ETU2 : Supérieur au CEP
+249	Oui	1	40	Mebang Mengoe	Yemessoa I	Béti	Homme	(3) Grand	7600	Non	Non	63	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+226	Oui	2	200	Mebang Mengoe	Yemessoa I	Béti	Homme	(2) Moyen	17250	Oui	Oui	63	ETU3 : CEP-CAP	ETU2 : Supérieur au CEP
+39	Oui	1	8	Nkol Ambenbe	Yemessoa III	Béti	Homme	(1) Petit	3075	Oui	Oui	63	ETU4 : Collège	ETU2 : Supérieur au CEP
+64	Non	0	800	Nkol Mekongo	Yemessoa III	Béti	Femme	(3) Grand	15000	Oui	Oui	63	ETU1: Aucun	ETU1: inférieur au CEP
+84	Oui	1	1000	Nkol Mekongo	Yemessoa III	Béti	Homme	(3) Grand	6950	Oui	Non	63	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+148	Oui	2	10	Biling Bitom	Yemessoa I	Béti	Homme	(3) Grand	3300	Oui	Non	64	ETU5 : BEPC et +	ETU2 : Supérieur au CEP
+54	Non	0	1000	Edip Ndam	Yemessoa III	Béti	Homme	(2) Moyen	3700	Oui	Oui	64	ETU4 : Collège	ETU2 : Supérieur au CEP
+13	Non	0	3000	Elig Messobo	Yemessoa II	Béti	Homme	(3) Grand	2550	Oui	Oui	64	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+161	Non	0	1500	Zogo Ntso	Yemessoa I	Béti	Homme	(3) Grand	3750	Oui	Non	64	ETU1: Aucun	ETU1: inférieur au CEP
+124	Oui	2	25	Biling Bitom	Yemessoa I	Béloua	Femme	(3) Grand	3850	Non	Non	65	ETU1: Aucun	ETU1: inférieur au CEP
+183	Oui	1	20	Biling Bitom	Yemessoa I	Béti	Homme	(3) Grand	3650	Oui	Oui	65	ETU3 : CEP-CAP	ETU2 : Supérieur au CEP
+314	Oui	2	5	Elig Messobo	Yemessoa II	Béti	Homme	(2) Moyen	5000	Oui	Non	65	ETU3 : CEP-CAP	ETU2 : Supérieur au CEP
+316	Oui	2	10	Elig Messobo	Yemessoa II	Béti	Homme	(3) Grand	3450	Oui	Non	65	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+18	Non	0	100	Nkol Ambenbe	Yemessoa III	Béti	Femme	(3) Grand	1075	Oui	Oui	65	ETU1: Aucun	ETU1: inférieur au CEP
+6	Oui	1	3	Nkol Ambenbe	Yemessoa III	Béti	Homme	(3) Grand	5950	Oui	Oui	65	ETU1: Aucun	ETU1: inférieur au CEP
+24	Non	0	10	Nkol Ambenbe	Yemessoa III	Béti	Homme	(3) Grand	6200	Oui	Non	65	ETU1: Aucun	ETU1: inférieur au CEP
+28	Non	0	800	Nkol Ambenbe	Yemessoa III	Béti	Homme	(3) Grand	2900	Oui	Oui	65	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+312	Oui	1	1000	Nkol Ambenbe	Yemessoa III	Béti	Homme	(3) Grand	5760	Oui	Non	65	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+334	Non	0	1000	Nkol Ambenbe	Yemessoa III	Béti	Homme	(3) Grand	17500	Oui	Non	65	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+79	Oui	1	800	Nkol Mekongo	Yemessoa III	Béloua	Homme	(3) Grand	3270	Oui	Oui	65	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+127	Oui	2	10	Biling Bitom	Yemessoa I	Béti	Homme	(3) Grand	3600	Non	Non	66	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+192	Oui	2	5	Elig Messobo	Yemessoa II	Béloua	Homme	(2) Moyen	3225	Oui	Non	66	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+2	Non	0	25	Nkol Ambenbe	Yemessoa III	Béti	Homme	(3) Grand	2250	Oui	Oui	66	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+16	Non	0	2000	Nkol Mekongo	Yemessoa III	Béti	Homme	(3) Grand	2750	Oui	Oui	66	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+111	Non	0	7	Nkol Nguégué	Yemessoa I	Béti	Homme	(2) Moyen	6200	Oui	Oui	66	ETU5 : BEPC et +	ETU2 : Supérieur au CEP
+165	Non	0	2500	Zogo Ntso	Yemessoa I	Béti	Homme	(3) Grand	1250	Oui	Oui	66	ETU4 : Collège	ETU2 : Supérieur au CEP
+318	Non	0	200	Nkol Ambenbe	Yemessoa III	Béti	Homme	(3) Grand	5150	Oui	Non	67	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+85	Non	0	1600	Nkol Mekongo	Yemessoa III	Béti	Homme	(3) Grand	3350	Non	Oui	67	ETU1: Aucun	ETU1: inférieur au CEP
+14	Non	0	3000	Nkol Mekongo	Yemessoa III	Béti	Homme	(3) Grand	2500	Oui	Non	67	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+283	Non	0	1500	Zogo Ntso	Yemessoa I	Béti	Femme	(3) Grand	1600	Non	Non	67	ETU1: Aucun	ETU1: inférieur au CEP
+138	Oui	1	20	Biling Bitom	Yemessoa I	Béti	Homme	(3) Grand	3100	Oui	Oui	68	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+74	Non	0	1000	Edip Ndam	Yemessoa III	Béti	Homme	(3) Grand	3250	Oui	Oui	68	ETU3 : CEP-CAP	ETU2 : Supérieur au CEP
+193	Oui	2	5	Elig Messobo	Yemessoa II	Béti	Homme	(3) Grand	2300	Oui	Oui	68	ETU1: Aucun	ETU1: inférieur au CEP
+324	Oui	2	5	Elig Messobo	Yemessoa II	Béti	Homme	(2) Moyen	6000	Oui	Non	68	ETU5 : BEPC et +	ETU2 : Supérieur au CEP
+58	Non	0	25	Nkol Ambenbe	Yemessoa III	Béti	Homme	(3) Grand	2125	Oui	Oui	68	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+300	Non	0	50	Nkol Ambenbe	Yemessoa III	Béti	Homme	(3) Grand	2350	Non	Non	68	ETU1: Aucun	ETU1: inférieur au CEP
+99	Non	0	25	Nkol Nguégué	Yemessoa I	Béloua	Homme	(3) Grand	3100	Oui	Non	68	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+121	Oui	2	25	Biling Bitom	Yemessoa I	Béti	Homme	(3) Grand	3750	Oui	Non	69	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+241	Non	0	10	Mebang Mengoe	Yemessoa I	Béti	Femme	(3) Grand	350	Non	Non	69	ETU1: Aucun	ETU1: inférieur au CEP
+8	Oui	1	18	Nkol Ambenbe	Yemessoa III	Béti	Homme	(3) Grand	1350	Oui	Oui	69	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+11	Non	0	1500	Nkol Mekongo	Yemessoa III	Béti	Homme	(3) Grand	2000	Oui	Oui	69	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+281	Non	0	600	Zogo Ntso	Yemessoa I	Béti	Homme	(3) Grand	2400	Oui	Non	69	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+223	Oui	2	10	Biling Bitom	Yemessoa I	Béti	Homme	(3) Grand	6350	Oui	Non	70	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+147	Non	0	20	Biling Bitom	Yemessoa I	Béti	Homme	(3) Grand	2700	Oui	Non	70	ETU1: Aucun	ETU1: inférieur au CEP
+166	Non	0	2000	Zogo Ntso	Yemessoa I	Béti	Femme	(1) Petit	3200	Non	Non	70	ETU1: Aucun	ETU1: inférieur au CEP
+308	Oui	2	7	Elig Messobo	Yemessoa II	Béti	Homme	(1) Petit	3975	Oui	Non	71	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+57	Non	0	25	Nkol Ambenbe	Yemessoa III	Béti	Homme	(3) Grand	3900	Oui	Oui	71	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+93	Non	0	15	Nkol Nguégué	Yemessoa I	Béti	Homme	(3) Grand	1350	Oui	Non	71	ETU1: Aucun	ETU1: inférieur au CEP
+96	Non	0	600	Nkol Nguégué	Yemessoa I	Béloua	Homme	(2) Moyen	3100	Oui	Oui	71	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+198	Non	0	800	Elig Messobo	Yemessoa II	Béti	Homme	(3) Grand	3700	Non	Non	72	ETU1: Aucun	ETU1: inférieur au CEP
+37	Oui	2	10	Nkol Ambenbe	Yemessoa III	Béti	Homme	(3) Grand	15300	Oui	Oui	72	ETU1: Aucun	ETU1: inférieur au CEP
+41	Non	0	25	Nkol Ambenbe	Yemessoa III	Béti	Homme	(3) Grand	1800	Non	Oui	72	ETU1: Aucun	ETU1: inférieur au CEP
+12	Oui	1	1500	Nkol Mekongo	Yemessoa III	Béloua	Homme	(3) Grand	2550	Oui	Oui	72	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+17	Oui	2	1500	Nkol Mekongo	Yemessoa III	Béti	Homme	(2) Moyen	3050	Oui	Oui	72	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+106	Non	0	50	Nkol Nguégué	Yemessoa I	Béloua	Femme	(2) Moyen	1250	Oui	Non	72	ETU1: Aucun	ETU1: inférieur au CEP
+113	Non	0	200	Nkol Nguégué	Yemessoa I	Béti	Homme	(3) Grand	950	Oui	Non	72	ETU1: Aucun	ETU1: inférieur au CEP
+155	Oui	2	10	Biling Bitom	Yemessoa I	Béti	Femme	(3) Grand	2300	Non	Non	73	ETU1: Aucun	ETU1: inférieur au CEP
+210	Oui	1	10	Mebang Mengoe	Yemessoa I	Béti	Homme	(3) Grand	550	Non	Oui	73	ETU1: Aucun	ETU1: inférieur au CEP
+231	Oui	2	15	Mebang Mengoe	Yemessoa I	Béti	Homme	(3) Grand	6750	Oui	Oui	73	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+110	Non	0	15	Nkol Nguégué	Yemessoa I	Béti	Femme	(3) Grand	1625	Oui	Non	73	ETU1: Aucun	ETU1: inférieur au CEP
+103	Non	0	100	Nkol Nguégué	Yemessoa I	Béti	Femme	(1) Petit	825	Non	Non	73	ETU1: Aucun	ETU1: inférieur au CEP
+152	Oui	2	8	Biling Bitom	Yemessoa I	Béloua	Homme	(1) Petit	3200	Oui	Oui	75	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+321	Non	0	400	Edip Ndam	Yemessoa III	Béti	Homme	(3) Grand	6750	Oui	Non	75	ETU3 : CEP-CAP	ETU2 : Supérieur au CEP
+10	Non	0	1500	Nkol Mekongo	Yemessoa III	Béloua	Homme	(3) Grand	8000	Oui	Oui	75	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+55	Non	0	50	Nkol Ambenbe	Yemessoa III	Béti	Homme	(3) Grand	3350	Oui	Oui	76	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+297	Non	0	15	Nkol Ambenbe	Yemessoa III	Béti	Femme	(3) Grand	2250	Non	Non	77	ETU1: Aucun	ETU1: inférieur au CEP
+180	Non	0	30	Biling Bitom	Yemessoa I	Béti	Femme	(3) Grand	1100	Non	Non	78	ETU1: Aucun	ETU1: inférieur au CEP
+235	Non	0	10	Biling Bitom	Yemessoa I	Béti	Homme	(3) Grand	1700	Oui	Non	78	ETU1: Aucun	ETU1: inférieur au CEP
+250	Non	0	200	Mebang Mengoe	Yemessoa I	Béti	Homme	(2) Moyen	11550	Oui	Non	79	ETU3 : CEP-CAP	ETU2 : Supérieur au CEP
+128	Oui	2	5	Biling Bitom	Yemessoa I	Béti	Homme	(3) Grand	3200	Oui	Non	81	ETU1: Aucun	ETU1: inférieur au CEP
+71	Non	0	35	Nkol Ambenbe	Yemessoa III	Béti	Homme	(3) Grand	2850	Oui	Non	83	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+176	Oui	2	15	Biling Bitom	Yemessoa I	Béti	Femme	(3) Grand	2675	Oui	Oui	87	ETU1: Aucun	ETU1: inférieur au CEP
+178	Oui	2	10	Biling Bitom	Yemessoa I	Béti	Homme	(3) Grand	3750	Oui	Oui	88	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+243	Oui	2	25	Mebang Mengoe	Yemessoa I	Béti	Homme	(3) Grand	8900	Oui	Oui	90	ETU2 :  Primaire sans CEP	ETU1: inférieur au CEP
+258	Non	0	1500	Zogo Ntso	Yemessoa I	Béti	Homme	(3) Grand	1600	Non	Non	97	ETU1: Aucun	ETU1: inférieur au CEP
