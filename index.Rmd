@@ -15,3 +15,14 @@ description: "Exercices commentés pour bien débuter en R."
 # Prérequis
 
 Aucun ! Cette initiation est destinée à des étudiants n'ayant jamais utilisé R mais connaissant à peu près la statistique univariée et bivariée...
+
+L'idée pédagogique est d'apprendre directement aux étudiants à programmer en R markdown plutôt qu'en R. Pourquoi ? Parce qu'ainsi ils vont simultanément :
+
+- taper du code R qu'ils ignorent
+- écrire sous ce code les explications du point de vue informatique
+- observer les résultats statistiques
+- interpréter ces résultats d'un point de vue statistique
+
+Cela n'a l'air de rien, mais en procédant ainsi les étudiants apprennent à produire à la fois leurs notes de cours en R, leurs notes de cours en statistiques et ... le langage Rmarkdown pour rédiger leurs futurs travaux.
+
+Bref, si tout a bien marché, l'étudiant n'aura même pas besoin de consulter le présent document, si ce n'est pour vérifier ce qu'il y a dans son document ...
