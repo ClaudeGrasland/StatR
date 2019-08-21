@@ -24,7 +24,7 @@
 <meta name="author" content="Claude Grasland" />
 
 
-<meta name="date" content="2019-08-20" />
+<meta name="date" content="2019-08-21" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -50,9 +50,9 @@
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
@@ -61,16 +61,14 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
+    border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -79,9 +77,9 @@ pre.numberSource code > span > a:first-child::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {   }
+  {  }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+a.sourceLine::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -201,11 +199,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="header">
 <h1 class="title">Premiers pas en statistique avec R</h1>
 <p class="author"><em>Claude Grasland</em></p>
-<p class="date"><em>2019-08-20</em></p>
+<p class="date"><em>2019-08-21</em></p>
 </div>
 <div id="prerequis" class="section level1">
 <h1><span class="header-section-number">Chapitre 1</span> Prérequis</h1>
 <p>Aucun ! Cette initiation est destinée à des étudiants n’ayant jamais utilisé R mais connaissant à peu près la statistique univariée et bivariée…</p>
+<p>L’idée pédagogique est d’apprendre directement aux étudiants à programmer en R markdown plutôt qu’en R. Pourquoi ? Parce qu’ainsi ils vont simultanément :</p>
+<ul>
+<li>taper du code R qu’ils ignorent</li>
+<li>écrire sous ce code les explications du point de vue informatique</li>
+<li>observer les résultats statistiques</li>
+<li>interpréter ces résultats d’un point de vue statistique</li>
+</ul>
+<p>Cela n’a l’air de rien, mais en procédant ainsi les étudiants apprennent à produire à la fois leurs notes de cours en R, leurs notes de cours en statistiques et … le langage Rmarkdown pour rédiger leurs futurs travaux.</p>
+<p>Bref, si tout a bien marché, l’étudiant n’aura même pas besoin de consulter le présent document, si ce n’est pour vérifier ce qu’il y a dans son document …</p>
 
 </div>
             </section>

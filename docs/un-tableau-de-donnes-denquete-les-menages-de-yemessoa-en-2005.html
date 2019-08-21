@@ -24,7 +24,7 @@
 <meta name="author" content="Claude Grasland" />
 
 
-<meta name="date" content="2019-08-20" />
+<meta name="date" content="2019-08-21" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -50,9 +50,9 @@
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
@@ -61,16 +61,14 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
+    border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -79,9 +77,9 @@ pre.numberSource code > span > a:first-child::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {   }
+  {  }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+a.sourceLine::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -208,16 +206,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="charger-ou-installer-les-packages-utiles.-1" class="section level3">
 <h3><span class="header-section-number">3.1.1</span> charger ou installer les packages utiles.</h3>
 <p>Comme on l’a déjà vu, il faut charger ici les packages utiles. On installera juste un joli package spécialisé dans l’analyse des tableaux de contingence et leur visualisation.</p>
-<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="un-tableau-de-donnes-denquete-les-menages-de-yemessoa-en-2005.html#cb87-1"></a><span class="kw">library</span>(vcd)</span></code></pre></div>
+<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb87-1" data-line-number="1"><span class="kw">library</span>(vcd)</a></code></pre></div>
 <pre><code>## Loading required package: grid</code></pre>
 <p>Si un message d’erreur apparaît, c’est qu’il faut installer le package à partir d’internet. On le fait avec le menu <strong>Tools/install Package</strong></p>
 </div>
 <div id="definir-un-espace-de-travail-1" class="section level3">
 <h3><span class="header-section-number">3.1.2</span> Définir un espace de travail</h3>
 <p>On vérifie l’emplacement où l’on va trouver les données</p>
-<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="un-tableau-de-donnes-denquete-les-menages-de-yemessoa-en-2005.html#cb89-1"></a><span class="co"># (1.2) Choix du rÈpertoire contenant les donnÈes</span></span>
-<span id="cb89-2"><a href="un-tableau-de-donnes-denquete-les-menages-de-yemessoa-en-2005.html#cb89-2"></a>monchemin&lt;-<span class="st">&quot;data/yemessoa&quot;</span></span>
-<span id="cb89-3"><a href="un-tableau-de-donnes-denquete-les-menages-de-yemessoa-en-2005.html#cb89-3"></a><span class="kw">list.files</span>(monchemin)</span></code></pre></div>
+<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb89-1" data-line-number="1"><span class="co"># (1.2) Choix du rÈpertoire contenant les donnÈes</span></a>
+<a class="sourceLine" id="cb89-2" data-line-number="2">monchemin&lt;-<span class="st">&quot;data/yemessoa&quot;</span></a>
+<a class="sourceLine" id="cb89-3" data-line-number="3"><span class="kw">list.files</span>(monchemin)</a></code></pre></div>
 <pre><code>## [1] &quot;yemessoa2005.txt&quot; &quot;yemessoa2005.xls&quot;</code></pre>
 <p>Nous allons maintenant essayer de charger le fichier de données</p>
 </div>
@@ -229,47 +227,61 @@ L’instruction <em>header=TRUE</em> signale que la première ligne donne le nom
 L’instruction <em>dec=“,”</em> signale que les décimales sont représentées par des virgules et non pas des points comme dans le premier module. Les séparateurs sont cette fois-ci des tabulations décrites par antislash-t.</p>
 <div id="importation-dun-tableau-1" class="section level3">
 <h3><span class="header-section-number">3.2.1</span> Importation d’un tableau</h3>
-<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="un-tableau-de-donnes-denquete-les-menages-de-yemessoa-en-2005.html#cb91-1"></a><span class="co"># --------------------------------------------------------</span></span>
-<span id="cb91-2"><a href="un-tableau-de-donnes-denquete-les-menages-de-yemessoa-en-2005.html#cb91-2"></a><span class="co"># (2) IMPORTATION ET MISE EN FORME D&#39;UN TABLEAU DE DONNEES</span></span>
-<span id="cb91-3"><a href="un-tableau-de-donnes-denquete-les-menages-de-yemessoa-en-2005.html#cb91-3"></a><span class="co"># --------------------------------------------------------</span></span>
-<span id="cb91-4"><a href="un-tableau-de-donnes-denquete-les-menages-de-yemessoa-en-2005.html#cb91-4"></a><span class="co"># (2.1) Importation d&#39;un fichier .txt</span></span>
-<span id="cb91-5"><a href="un-tableau-de-donnes-denquete-les-menages-de-yemessoa-en-2005.html#cb91-5"></a>yem&lt;-<span class="kw">read.csv</span>(<span class="st">&quot;data/yemessoa/yemessoa2005.txt&quot;</span>, <span class="dt">header=</span><span class="ot">TRUE</span>, <span class="dt">sep=</span><span class="st">&quot;</span><span class="ch">\t</span><span class="st">&quot;</span>,<span class="dt">dec=</span><span class="st">&quot;,&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb91-1" data-line-number="1"><span class="co"># --------------------------------------------------------</span></a>
+<a class="sourceLine" id="cb91-2" data-line-number="2"><span class="co"># (2) IMPORTATION ET MISE EN FORME D&#39;UN TABLEAU DE DONNEES</span></a>
+<a class="sourceLine" id="cb91-3" data-line-number="3"><span class="co"># --------------------------------------------------------</span></a>
+<a class="sourceLine" id="cb91-4" data-line-number="4"><span class="co"># (2.1) Importation d&#39;un fichier .txt</span></a>
+<a class="sourceLine" id="cb91-5" data-line-number="5">yem&lt;-<span class="kw">read.csv</span>(<span class="st">&quot;data/yemessoa/yemessoa2005.txt&quot;</span>, <span class="dt">header=</span><span class="ot">TRUE</span>, <span class="dt">sep=</span><span class="st">&quot;</span><span class="ch">\t</span><span class="st">&quot;</span>,<span class="dt">dec=</span><span class="st">&quot;,&quot;</span>)</a></code></pre></div>
 <p>On affiche les premières lignes (<em>head</em>) ou les dernières lignes (<em>tail</em>) du tableau pour voir si le chargement s’est bien effectué :</p>
-<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="un-tableau-de-donnes-denquete-les-menages-de-yemessoa-en-2005.html#cb92-1"></a><span class="kw">head</span>(yem)</span></code></pre></div>
-<pre><code>##   CODE CON2 CON3 DIST         QUAR          VIL   CLAN  SEXE      SELF
-## 1  237  Oui    2    3 Elig Messobo  Yemessoa II   Béti Homme (1) Petit
-## 2   98  Non    0   20 Nkol Nguégué   Yemessoa I Béloua Homme (1) Petit
-## 3  157  Non    0   30 Biling Bitom   Yemessoa I Béloua Homme (1) Petit
-## 4  325  Oui    1   10 Elig Messobo  Yemessoa II   Béti Homme (2) Moyen
-## 5  299  Oui    1   10 Nkol Ambenbe Yemessoa III   Béti Homme (3) Grand
-## 6   91  Non    0 1000 Nkol Mekongo Yemessoa III   Béti Femme (1) Petit
-##    BUD TABLE SALON AGE                      ETU5                    ETU2
-## 1 3950   Non   Non  19            ETU3 : CEP-CAP ETU2 : Supérieur au CEP
-## 2 3700   Oui   Non  20            ETU3 : CEP-CAP ETU2 : Supérieur au CEP
-## 3 1250   Non   Non  21          ETU5 : BEPC et + ETU2 : Supérieur au CEP
-## 4 2200   Oui   Non  21            ETU3 : CEP-CAP ETU2 : Supérieur au CEP
-## 5 4450   Oui   Non  21            ETU3 : CEP-CAP ETU2 : Supérieur au CEP
-## 6 1500   Oui   Oui  22 ETU2 :  Primaire sans CEP  ETU1: inférieur au CEP</code></pre>
-<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="un-tableau-de-donnes-denquete-les-menages-de-yemessoa-en-2005.html#cb94-1"></a><span class="kw">tail</span>(yem)</span></code></pre></div>
-<pre><code>##     CODE CON2 CON3 DIST          QUAR          VIL CLAN  SEXE      SELF
-## 294  128  Oui    2    5  Biling Bitom   Yemessoa I Béti Homme (3) Grand
-## 295   71  Non    0   35  Nkol Ambenbe Yemessoa III Béti Homme (3) Grand
-## 296  176  Oui    2   15  Biling Bitom   Yemessoa I Béti Femme (3) Grand
-## 297  178  Oui    2   10  Biling Bitom   Yemessoa I Béti Homme (3) Grand
-## 298  243  Oui    2   25 Mebang Mengoe   Yemessoa I Béti Homme (3) Grand
-## 299  258  Non    0 1500     Zogo Ntso   Yemessoa I Béti Homme (3) Grand
-##      BUD TABLE SALON AGE                      ETU5                   ETU2
-## 294 3200   Oui   Non  81               ETU1: Aucun ETU1: inférieur au CEP
-## 295 2850   Oui   Non  83 ETU2 :  Primaire sans CEP ETU1: inférieur au CEP
-## 296 2675   Oui   Oui  87               ETU1: Aucun ETU1: inférieur au CEP
-## 297 3750   Oui   Oui  88 ETU2 :  Primaire sans CEP ETU1: inférieur au CEP
-## 298 8900   Oui   Oui  90 ETU2 :  Primaire sans CEP ETU1: inférieur au CEP
-## 299 1600   Non   Non  97               ETU1: Aucun ETU1: inférieur au CEP</code></pre>
+<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb92-1" data-line-number="1"><span class="kw">head</span>(yem)</a></code></pre></div>
+<pre><code>##   CODE CON2 CON3 DIST               QUAR          VIL      CLAN  SEXE
+## 1  237  Oui    2    3       Elig Messobo  Yemessoa II   B\xe9ti Homme
+## 2   98  Non    0   20 Nkol Ngu\xe9gu\xe9   Yemessoa I B\xe9loua Homme
+## 3  157  Non    0   30       Biling Bitom   Yemessoa I B\xe9loua Homme
+## 4  325  Oui    1   10       Elig Messobo  Yemessoa II   B\xe9ti Homme
+## 5  299  Oui    1   10       Nkol Ambenbe Yemessoa III   B\xe9ti Homme
+## 6   91  Non    0 1000       Nkol Mekongo Yemessoa III   B\xe9ti Femme
+##        SELF  BUD TABLE SALON AGE                      ETU5
+## 1 (1) Petit 3950   Non   Non  19            ETU3 : CEP-CAP
+## 2 (1) Petit 3700   Oui   Non  20            ETU3 : CEP-CAP
+## 3 (1) Petit 1250   Non   Non  21          ETU5 : BEPC et +
+## 4 (2) Moyen 2200   Oui   Non  21            ETU3 : CEP-CAP
+## 5 (3) Grand 4450   Oui   Non  21            ETU3 : CEP-CAP
+## 6 (1) Petit 1500   Oui   Oui  22 ETU2 :  Primaire sans CEP
+##                         ETU2
+## 1 ETU2 : Sup\xe9rieur au CEP
+## 2 ETU2 : Sup\xe9rieur au CEP
+## 3 ETU2 : Sup\xe9rieur au CEP
+## 4 ETU2 : Sup\xe9rieur au CEP
+## 5 ETU2 : Sup\xe9rieur au CEP
+## 6  ETU1: inf\xe9rieur au CEP</code></pre>
+<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb94-1" data-line-number="1"><span class="kw">tail</span>(yem)</a></code></pre></div>
+<pre><code>##     CODE CON2 CON3 DIST          QUAR          VIL    CLAN  SEXE      SELF
+## 294  128  Oui    2    5  Biling Bitom   Yemessoa I B\xe9ti Homme (3) Grand
+## 295   71  Non    0   35  Nkol Ambenbe Yemessoa III B\xe9ti Homme (3) Grand
+## 296  176  Oui    2   15  Biling Bitom   Yemessoa I B\xe9ti Femme (3) Grand
+## 297  178  Oui    2   10  Biling Bitom   Yemessoa I B\xe9ti Homme (3) Grand
+## 298  243  Oui    2   25 Mebang Mengoe   Yemessoa I B\xe9ti Homme (3) Grand
+## 299  258  Non    0 1500     Zogo Ntso   Yemessoa I B\xe9ti Homme (3) Grand
+##      BUD TABLE SALON AGE                      ETU5
+## 294 3200   Oui   Non  81               ETU1: Aucun
+## 295 2850   Oui   Non  83 ETU2 :  Primaire sans CEP
+## 296 2675   Oui   Oui  87               ETU1: Aucun
+## 297 3750   Oui   Oui  88 ETU2 :  Primaire sans CEP
+## 298 8900   Oui   Oui  90 ETU2 :  Primaire sans CEP
+## 299 1600   Non   Non  97               ETU1: Aucun
+##                          ETU2
+## 294 ETU1: inf\xe9rieur au CEP
+## 295 ETU1: inf\xe9rieur au CEP
+## 296 ETU1: inf\xe9rieur au CEP
+## 297 ETU1: inf\xe9rieur au CEP
+## 298 ETU1: inf\xe9rieur au CEP
+## 299 ETU1: inf\xe9rieur au CEP</code></pre>
 </div>
 <div id="verification-du-type-des-variables-1" class="section level3">
 <h3><span class="header-section-number">3.2.2</span> Vérification du type des variables</h3>
 <p>On a vu qu’on peut s’éviter beaucoup d’ennuis en contrôlant le type des variables qui a été attribué aux différentes colonnes par R lors de la lecture d’un fichier. Pour cela on commence par regarder quels sont les types de variables du tableau à l’aide de l’instruction <em>str()</em> :</p>
-<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="un-tableau-de-donnes-denquete-les-menages-de-yemessoa-en-2005.html#cb96-1"></a><span class="kw">str</span>(yem)</span></code></pre></div>
+<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb96-1" data-line-number="1"><span class="kw">str</span>(yem)</a></code></pre></div>
 <pre><code>## &#39;data.frame&#39;:    299 obs. of  15 variables:
 ##  $ CODE : int  237 98 157 325 299 91 215 48 50 154 ...
 ##  $ CON2 : Factor w/ 2 levels &quot;Non&quot;,&quot;Oui&quot;: 2 1 1 2 2 1 2 2 2 1 ...
@@ -277,7 +289,7 @@ L’instruction <em>dec=“,”</em> signale que les décimales sont représent�
 ##  $ DIST : int  3 20 30 10 10 1000 20 15 30 50 ...
 ##  $ QUAR : Factor w/ 9 levels &quot;Biling Bitom&quot;,..: 4 8 1 4 6 7 1 4 4 1 ...
 ##  $ VIL  : Factor w/ 3 levels &quot;Yemessoa I&quot;,&quot;Yemessoa II&quot;,..: 2 1 1 2 3 3 1 2 2 1 ...
-##  $ CLAN : Factor w/ 2 levels &quot;Béloua&quot;,&quot;Béti&quot;: 2 1 1 2 2 2 2 2 2 2 ...
+##  $ CLAN : Factor w/ 2 levels &quot;B\xe9loua&quot;,&quot;B\xe9ti&quot;: 2 1 1 2 2 2 2 2 2 2 ...
 ##  $ SEXE : Factor w/ 2 levels &quot;Femme&quot;,&quot;Homme&quot;: 2 2 2 2 2 1 2 2 2 2 ...
 ##  $ SELF : Factor w/ 3 levels &quot;(1) Petit&quot;,&quot;(2) Moyen&quot;,..: 1 1 1 2 3 1 2 2 3 1 ...
 ##  $ BUD  : int  3950 3700 1250 2200 4450 1500 1150 8550 13575 1750 ...
@@ -285,15 +297,15 @@ L’instruction <em>dec=“,”</em> signale que les décimales sont représent�
 ##  $ SALON: Factor w/ 2 levels &quot;Non&quot;,&quot;Oui&quot;: 1 1 1 1 1 2 1 1 1 1 ...
 ##  $ AGE  : int  19 20 21 21 21 22 24 25 26 28 ...
 ##  $ ETU5 : Factor w/ 5 levels &quot;ETU1: Aucun&quot;,..: 3 3 5 3 3 2 5 2 5 2 ...
-##  $ ETU2 : Factor w/ 2 levels &quot;ETU1: inférieur au CEP&quot;,..: 2 2 2 2 2 1 2 1 2 1 ...</code></pre>
+##  $ ETU2 : Factor w/ 2 levels &quot;ETU1: inf\xe9rieur au CEP&quot;,..: 2 2 2 2 2 1 2 1 2 1 ...</code></pre>
 <p>Il y a visiblement des erreurs de codage que l’on va corriger. Ainsi, CODE est de type caractère. Mais le type “FACTOR” doit par contreêtre conservé pour toutes les variables qualitatives ayant au moins deux modalités. On peut renommer les modalités d’un facteur</p>
-<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="un-tableau-de-donnes-denquete-les-menages-de-yemessoa-en-2005.html#cb98-1"></a>yem<span class="op">$</span>CODE&lt;-<span class="kw">as.character</span>(yem<span class="op">$</span>CODE)</span>
-<span id="cb98-2"><a href="un-tableau-de-donnes-denquete-les-menages-de-yemessoa-en-2005.html#cb98-2"></a>yem<span class="op">$</span>CON3&lt;-<span class="kw">as.factor</span>(yem<span class="op">$</span>CON3)</span>
-<span id="cb98-3"><a href="un-tableau-de-donnes-denquete-les-menages-de-yemessoa-en-2005.html#cb98-3"></a><span class="kw">levels</span> (yem<span class="op">$</span>CON3)</span></code></pre></div>
+<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb98-1" data-line-number="1">yem<span class="op">$</span>CODE&lt;-<span class="kw">as.character</span>(yem<span class="op">$</span>CODE)</a>
+<a class="sourceLine" id="cb98-2" data-line-number="2">yem<span class="op">$</span>CON3&lt;-<span class="kw">as.factor</span>(yem<span class="op">$</span>CON3)</a>
+<a class="sourceLine" id="cb98-3" data-line-number="3"><span class="kw">levels</span> (yem<span class="op">$</span>CON3)</a></code></pre></div>
 <pre><code>## [1] &quot;0&quot; &quot;1&quot; &quot;2&quot;</code></pre>
-<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="un-tableau-de-donnes-denquete-les-menages-de-yemessoa-en-2005.html#cb100-1"></a><span class="kw">levels</span>(yem<span class="op">$</span>CON3)&lt;-<span class="kw">c</span>(<span class="st">&quot;(0) : non connecté&quot;</span>,<span class="st">&quot;(1) informel&quot;</span>,<span class="st">&quot;(2) officiel&quot;</span>)</span>
-<span id="cb100-2"><a href="un-tableau-de-donnes-denquete-les-menages-de-yemessoa-en-2005.html#cb100-2"></a>yem<span class="op">$</span>DIST&lt;-<span class="kw">as.numeric</span>(yem<span class="op">$</span>DIST)</span>
-<span id="cb100-3"><a href="un-tableau-de-donnes-denquete-les-menages-de-yemessoa-en-2005.html#cb100-3"></a><span class="kw">str</span>(yem)</span></code></pre></div>
+<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb100-1" data-line-number="1"><span class="kw">levels</span>(yem<span class="op">$</span>CON3)&lt;-<span class="kw">c</span>(<span class="st">&quot;(0) : non connecté&quot;</span>,<span class="st">&quot;(1) informel&quot;</span>,<span class="st">&quot;(2) officiel&quot;</span>)</a>
+<a class="sourceLine" id="cb100-2" data-line-number="2">yem<span class="op">$</span>DIST&lt;-<span class="kw">as.numeric</span>(yem<span class="op">$</span>DIST)</a>
+<a class="sourceLine" id="cb100-3" data-line-number="3"><span class="kw">str</span>(yem)</a></code></pre></div>
 <pre><code>## &#39;data.frame&#39;:    299 obs. of  15 variables:
 ##  $ CODE : chr  &quot;237&quot; &quot;98&quot; &quot;157&quot; &quot;325&quot; ...
 ##  $ CON2 : Factor w/ 2 levels &quot;Non&quot;,&quot;Oui&quot;: 2 1 1 2 2 1 2 2 2 1 ...
@@ -301,7 +313,7 @@ L’instruction <em>dec=“,”</em> signale que les décimales sont représent�
 ##  $ DIST : num  3 20 30 10 10 1000 20 15 30 50 ...
 ##  $ QUAR : Factor w/ 9 levels &quot;Biling Bitom&quot;,..: 4 8 1 4 6 7 1 4 4 1 ...
 ##  $ VIL  : Factor w/ 3 levels &quot;Yemessoa I&quot;,&quot;Yemessoa II&quot;,..: 2 1 1 2 3 3 1 2 2 1 ...
-##  $ CLAN : Factor w/ 2 levels &quot;Béloua&quot;,&quot;Béti&quot;: 2 1 1 2 2 2 2 2 2 2 ...
+##  $ CLAN : Factor w/ 2 levels &quot;B\xe9loua&quot;,&quot;B\xe9ti&quot;: 2 1 1 2 2 2 2 2 2 2 ...
 ##  $ SEXE : Factor w/ 2 levels &quot;Femme&quot;,&quot;Homme&quot;: 2 2 2 2 2 1 2 2 2 2 ...
 ##  $ SELF : Factor w/ 3 levels &quot;(1) Petit&quot;,&quot;(2) Moyen&quot;,..: 1 1 1 2 3 1 2 2 3 1 ...
 ##  $ BUD  : int  3950 3700 1250 2200 4450 1500 1150 8550 13575 1750 ...
@@ -309,13 +321,13 @@ L’instruction <em>dec=“,”</em> signale que les décimales sont représent�
 ##  $ SALON: Factor w/ 2 levels &quot;Non&quot;,&quot;Oui&quot;: 1 1 1 1 1 2 1 1 1 1 ...
 ##  $ AGE  : int  19 20 21 21 21 22 24 25 26 28 ...
 ##  $ ETU5 : Factor w/ 5 levels &quot;ETU1: Aucun&quot;,..: 3 3 5 3 3 2 5 2 5 2 ...
-##  $ ETU2 : Factor w/ 2 levels &quot;ETU1: inférieur au CEP&quot;,..: 2 2 2 2 2 1 2 1 2 1 ...</code></pre>
+##  $ ETU2 : Factor w/ 2 levels &quot;ETU1: inf\xe9rieur au CEP&quot;,..: 2 2 2 2 2 1 2 1 2 1 ...</code></pre>
 <p>Et voilà : désormais notre tableau est désormais cohérent. On pourra encore l’améliorer par la suite en transformant des variables quantitatives en variables qualitatives</p>
 </div>
 <div id="un-petit-resume-statistique-1" class="section level3">
 <h3><span class="header-section-number">3.2.3</span> Un petit résumé statistique</h3>
 <p>La récompense d’une bonne définition du tableau est d’obtenir pour chaque variable un résumé adapté à son type</p>
-<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="un-tableau-de-donnes-denquete-les-menages-de-yemessoa-en-2005.html#cb102-1"></a><span class="kw">summary</span>(yem)</span></code></pre></div>
+<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb102-1" data-line-number="1"><span class="kw">summary</span>(yem)</a></code></pre></div>
 <pre><code>##      CODE            CON2                     CON3          DIST       
 ##  Length:299         Non:165   (0) : non connecté:165   Min.   :   1.0  
 ##  Class :character   Oui:134   (1) informel      : 49   1st Qu.:  15.0  
@@ -324,14 +336,14 @@ L’instruction <em>dec=“,”</em> signale que les décimales sont représent�
 ##                                                        3rd Qu.: 500.0  
 ##                                                        Max.   :3000.0  
 ##                                                                        
-##             QUAR              VIL          CLAN        SEXE    
-##  Biling Bitom :61   Yemessoa I  :150   Béloua: 32   Femme: 51  
-##  Nkol Ambenbe :60   Yemessoa II : 58   Béti  :267   Homme:248  
-##  Elig Messobo :57   Yemessoa III: 91                           
-##  Mebang Mengoe:30                                              
-##  Nkol Nguégué :30                                              
-##  Zogo Ntso    :29                                              
-##  (Other)      :32                                              
+##                  QUAR              VIL        CLAN             SEXE    
+##  Biling Bitom      :61   Yemessoa I  :150   B\xe9loua: 32   Femme: 51  
+##  Nkol Ambenbe      :60   Yemessoa II : 58   B\xe9ti  :267   Homme:248  
+##  Elig Messobo      :57   Yemessoa III: 91                              
+##  Mebang Mengoe     :30                                                 
+##  Nkol Ngu\xe9gu\xe9:30                                                 
+##  Zogo Ntso         :29                                                 
+##  (Other)           :32                                                 
 ##         SELF          BUD        TABLE     SALON          AGE       
 ##  (1) Petit: 54   Min.   :  350   Non: 86   Non:191   Min.   :19.00  
 ##  (2) Moyen: 90   1st Qu.: 2200   Oui:213   Oui:108   1st Qu.:40.00  
@@ -340,13 +352,13 @@ L’instruction <em>dec=“,”</em> signale que les décimales sont représent�
 ##                  3rd Qu.: 5700                       3rd Qu.:63.00  
 ##                  Max.   :45000                       Max.   :97.00  
 ##                                                                     
-##                         ETU5                          ETU2    
-##  ETU1: Aucun              : 52   ETU1: inférieur au CEP :164  
-##  ETU2 :  Primaire sans CEP:112   ETU2 : Supérieur au CEP:135  
-##  ETU3 : CEP-CAP           : 72                                
-##  ETU4 : Collège           : 34                                
-##  ETU5 : BEPC et +         : 29                                
-##                                                               
+##                         ETU5       ETU2                          
+##  ETU1: Aucun              : 52   ETU1: inf\xe9rieur au CEP :164  
+##  ETU2 :  Primaire sans CEP:112   ETU2 : Sup\xe9rieur au CEP:135  
+##  ETU3 : CEP-CAP           : 72                                   
+##  ETU4 : Coll\xe8ge        : 34                                   
+##  ETU5 : BEPC et +         : 29                                   
+##                                                                  
 ## </code></pre>
 <p>Avant d’aller plus loin, commentez rapidement ce tableau pour bien prendre connaissance de chacune des variables.</p>
 </div>
@@ -358,56 +370,56 @@ L’instruction <em>dec=“,”</em> signale que les décimales sont représent�
 <div id="analyse-de-la-variable-dependante-y" class="section level3">
 <h3><span class="header-section-number">3.3.1</span> Analyse de la variable dépendante (Y)</h3>
 <p>Deux petites commandes pour dénombrer l’effectif des classes et les représenter</p>
-<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="un-tableau-de-donnes-denquete-les-menages-de-yemessoa-en-2005.html#cb104-1"></a><span class="co"># Analyse de la  variable dépendante</span></span>
-<span id="cb104-2"><a href="un-tableau-de-donnes-denquete-les-menages-de-yemessoa-en-2005.html#cb104-2"></a>Y&lt;-yem<span class="op">$</span>CON2</span>
-<span id="cb104-3"><a href="un-tableau-de-donnes-denquete-les-menages-de-yemessoa-en-2005.html#cb104-3"></a><span class="co">#calcul des fréquences</span></span>
-<span id="cb104-4"><a href="un-tableau-de-donnes-denquete-les-menages-de-yemessoa-en-2005.html#cb104-4"></a><span class="kw">summary</span>(Y)</span></code></pre></div>
+<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb104-1" data-line-number="1"><span class="co"># Analyse de la  variable dépendante</span></a>
+<a class="sourceLine" id="cb104-2" data-line-number="2">Y&lt;-yem<span class="op">$</span>CON2</a>
+<a class="sourceLine" id="cb104-3" data-line-number="3"><span class="co">#calcul des fréquences</span></a>
+<a class="sourceLine" id="cb104-4" data-line-number="4"><span class="kw">summary</span>(Y)</a></code></pre></div>
 <pre><code>## Non Oui 
 ## 165 134</code></pre>
-<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="un-tableau-de-donnes-denquete-les-menages-de-yemessoa-en-2005.html#cb106-1"></a><span class="co">#diagramme en bâtons</span></span>
-<span id="cb106-2"><a href="un-tableau-de-donnes-denquete-les-menages-de-yemessoa-en-2005.html#cb106-2"></a><span class="kw">plot</span>(Y)</span></code></pre></div>
+<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb106-1" data-line-number="1"><span class="co">#diagramme en bâtons</span></a>
+<a class="sourceLine" id="cb106-2" data-line-number="2"><span class="kw">plot</span>(Y)</a></code></pre></div>
 <p><img src="StatR_files/figure-html/unnamed-chunk-43-1.png" width="672" />
 Commentaire : …</p>
 </div>
 <div id="analyse-de-la-variable-independante-x" class="section level3">
 <h3><span class="header-section-number">3.3.2</span> Analyse de la variable indépendante (X)</h3>
 <p>Même programme …</p>
-<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb107-1"><a href="un-tableau-de-donnes-denquete-les-menages-de-yemessoa-en-2005.html#cb107-1"></a><span class="co"># Analyse de la  variable dépendante</span></span>
-<span id="cb107-2"><a href="un-tableau-de-donnes-denquete-les-menages-de-yemessoa-en-2005.html#cb107-2"></a>X&lt;-yem<span class="op">$</span>SEXE</span>
-<span id="cb107-3"><a href="un-tableau-de-donnes-denquete-les-menages-de-yemessoa-en-2005.html#cb107-3"></a><span class="co">#calcul des fréquences</span></span>
-<span id="cb107-4"><a href="un-tableau-de-donnes-denquete-les-menages-de-yemessoa-en-2005.html#cb107-4"></a><span class="kw">summary</span>(X)</span></code></pre></div>
+<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb107-1" data-line-number="1"><span class="co"># Analyse de la  variable dépendante</span></a>
+<a class="sourceLine" id="cb107-2" data-line-number="2">X&lt;-yem<span class="op">$</span>SEXE</a>
+<a class="sourceLine" id="cb107-3" data-line-number="3"><span class="co">#calcul des fréquences</span></a>
+<a class="sourceLine" id="cb107-4" data-line-number="4"><span class="kw">summary</span>(X)</a></code></pre></div>
 <pre><code>## Femme Homme 
 ##    51   248</code></pre>
-<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb109-1"><a href="un-tableau-de-donnes-denquete-les-menages-de-yemessoa-en-2005.html#cb109-1"></a><span class="co">#diagramme en bâtons</span></span>
-<span id="cb109-2"><a href="un-tableau-de-donnes-denquete-les-menages-de-yemessoa-en-2005.html#cb109-2"></a><span class="kw">plot</span>(X)</span></code></pre></div>
+<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb109-1" data-line-number="1"><span class="co">#diagramme en bâtons</span></a>
+<a class="sourceLine" id="cb109-2" data-line-number="2"><span class="kw">plot</span>(X)</a></code></pre></div>
 <p><img src="StatR_files/figure-html/unnamed-chunk-44-1.png" width="672" /></p>
 <p>Commentaire : …</p>
 </div>
 <div id="visualisation-de-la-distribution-croisee-de-y-et-x" class="section level3">
 <h3><span class="header-section-number">3.3.3</span> Visualisation de la distribution croisée de Y et X</h3>
-<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="un-tableau-de-donnes-denquete-les-menages-de-yemessoa-en-2005.html#cb110-1"></a><span class="kw">plot</span>(Y<span class="op">~</span>X)</span></code></pre></div>
+<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb110-1" data-line-number="1"><span class="kw">plot</span>(Y<span class="op">~</span>X)</a></code></pre></div>
 <p><img src="StatR_files/figure-html/unnamed-chunk-45-1.png" width="672" /></p>
 <p>Commentaire : …</p>
 </div>
 <div id="calcul-du-tableau-de-contingence-et-des-trois-tableaux-de-pourcentage-associes" class="section level3">
 <h3><span class="header-section-number">3.3.4</span> Calcul du tableau de contingence et des trois tableaux de pourcentage associés</h3>
-<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb111-1"><a href="un-tableau-de-donnes-denquete-les-menages-de-yemessoa-en-2005.html#cb111-1"></a>tabcont&lt;-<span class="kw">table</span>(Y,X)</span>
-<span id="cb111-2"><a href="un-tableau-de-donnes-denquete-les-menages-de-yemessoa-en-2005.html#cb111-2"></a>tabcont</span></code></pre></div>
+<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb111-1" data-line-number="1">tabcont&lt;-<span class="kw">table</span>(Y,X)</a>
+<a class="sourceLine" id="cb111-2" data-line-number="2">tabcont</a></code></pre></div>
 <pre><code>##      X
 ## Y     Femme Homme
 ##   Non    36   129
 ##   Oui    15   119</code></pre>
-<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb113-1"><a href="un-tableau-de-donnes-denquete-les-menages-de-yemessoa-en-2005.html#cb113-1"></a><span class="kw">prop.table</span>(tabcont,<span class="dt">margin=</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb113-1" data-line-number="1"><span class="kw">prop.table</span>(tabcont,<span class="dt">margin=</span>)</a></code></pre></div>
 <pre><code>##      X
 ## Y          Femme      Homme
 ##   Non 0.12040134 0.43143813
 ##   Oui 0.05016722 0.39799331</code></pre>
-<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb115-1"><a href="un-tableau-de-donnes-denquete-les-menages-de-yemessoa-en-2005.html#cb115-1"></a><span class="kw">prop.table</span>(tabcont,<span class="dt">margin=</span><span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb115-1" data-line-number="1"><span class="kw">prop.table</span>(tabcont,<span class="dt">margin=</span><span class="dv">1</span>)</a></code></pre></div>
 <pre><code>##      X
 ## Y         Femme     Homme
 ##   Non 0.2181818 0.7818182
 ##   Oui 0.1119403 0.8880597</code></pre>
-<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="un-tableau-de-donnes-denquete-les-menages-de-yemessoa-en-2005.html#cb117-1"></a><span class="kw">prop.table</span>(tabcont,<span class="dt">margin=</span><span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb117-1" data-line-number="1"><span class="kw">prop.table</span>(tabcont,<span class="dt">margin=</span><span class="dv">2</span>)</a></code></pre></div>
 <pre><code>##      X
 ## Y         Femme     Homme
 ##   Non 0.7058824 0.5201613
@@ -416,23 +428,23 @@ Commentaire : …</p>
 </div>
 <div id="calcul-du-tableau-theorique-et-test-du-chi-2" class="section level3">
 <h3><span class="header-section-number">3.3.5</span> Calcul du tableau théorique et test du chi-2</h3>
-<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="un-tableau-de-donnes-denquete-les-menages-de-yemessoa-en-2005.html#cb119-1"></a>test&lt;-<span class="kw">chisq.test</span>(tabcont)</span>
-<span id="cb119-2"><a href="un-tableau-de-donnes-denquete-les-menages-de-yemessoa-en-2005.html#cb119-2"></a>test<span class="op">$</span>observed</span></code></pre></div>
+<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb119-1" data-line-number="1">test&lt;-<span class="kw">chisq.test</span>(tabcont)</a>
+<a class="sourceLine" id="cb119-2" data-line-number="2">test<span class="op">$</span>observed</a></code></pre></div>
 <pre><code>##      X
 ## Y     Femme Homme
 ##   Non    36   129
 ##   Oui    15   119</code></pre>
-<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="un-tableau-de-donnes-denquete-les-menages-de-yemessoa-en-2005.html#cb121-1"></a>test<span class="op">$</span>expected</span></code></pre></div>
+<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb121-1" data-line-number="1">test<span class="op">$</span>expected</a></code></pre></div>
 <pre><code>##      X
 ## Y        Femme    Homme
 ##   Non 28.14381 136.8562
 ##   Oui 22.85619 111.1438</code></pre>
-<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb123-1"><a href="un-tableau-de-donnes-denquete-les-menages-de-yemessoa-en-2005.html#cb123-1"></a>test<span class="op">$</span>residuals</span></code></pre></div>
+<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb123-1" data-line-number="1">test<span class="op">$</span>residuals</a></code></pre></div>
 <pre><code>##      X
 ## Y          Femme      Homme
 ##   Non  1.4808817 -0.6715519
 ##   Oui -1.6432738  0.7451937</code></pre>
-<div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb125-1"><a href="un-tableau-de-donnes-denquete-les-menages-de-yemessoa-en-2005.html#cb125-1"></a>test</span></code></pre></div>
+<div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb125-1" data-line-number="1">test</a></code></pre></div>
 <pre><code>## 
 ##  Pearson&#39;s Chi-squared test with Yates&#39; continuity correction
 ## 
@@ -442,8 +454,8 @@ Commentaire : …</p>
 </div>
 <div id="une-jolie-figure-pour-interpreter-la-relation-si-elle-est-significative" class="section level3">
 <h3><span class="header-section-number">3.3.6</span> Une jolie figure pour interpréter la relation (si elle est significative)</h3>
-<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb127-1"><a href="un-tableau-de-donnes-denquete-les-menages-de-yemessoa-en-2005.html#cb127-1"></a><span class="kw">mosaic</span>(<span class="op">~</span>Y<span class="op">+</span>X,</span>
-<span id="cb127-2"><a href="un-tableau-de-donnes-denquete-les-menages-de-yemessoa-en-2005.html#cb127-2"></a>  <span class="dt">main =</span> <span class="st">&quot;Relation entre X et Y&quot;</span>, <span class="dt">shade =</span> <span class="ot">TRUE</span>, <span class="dt">legend =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb127-1" data-line-number="1"><span class="kw">mosaic</span>(<span class="op">~</span>Y<span class="op">+</span>X,</a>
+<a class="sourceLine" id="cb127-2" data-line-number="2">  <span class="dt">main =</span> <span class="st">&quot;Relation entre X et Y&quot;</span>, <span class="dt">shade =</span> <span class="ot">TRUE</span>, <span class="dt">legend =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
 <p><img src="StatR_files/figure-html/unnamed-chunk-48-1.png" width="672" /></p>
 </div>
 </div>
